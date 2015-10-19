@@ -1,3 +1,2 @@
 set runtimepath+=$HOME/Dropbox/vim
-source $HOME/Dropbox/vim/.vimrc
-
+source $HOME/Dropbox/Github/vimrc/.vimrc
