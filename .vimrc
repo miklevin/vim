@@ -35,6 +35,7 @@ set background=dark
 set mat=5
 set winheight=15
 set hlsearch
+set number
 let @j = '/Beginning of Journalokkkk80i-j! datei## jzzi'
 let @s = '[s1g='
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
