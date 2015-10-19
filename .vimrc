@@ -10,7 +10,7 @@ if &term =~ "xterm"
 endif
 syntax on
 syntax enable
-highlight SpellBad ctermbg=001
+highlight SpellBad ctermbg=052
 autocmd BufEnter * :syntax sync fromstart
 set mouse=a
 set encoding=utf8
@@ -38,6 +38,10 @@ set hlsearch
 let @j = '/Beginning of Journalokkkk80i-j! datei## jzzi'
 let @s = '[s1g='
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 " Toggle spell checking on and off with `,s`
 let mapleader = ","
 nmap <silent> <leader>s :set spell!<CR>
