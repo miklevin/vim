@@ -20,7 +20,6 @@ set softtabstop=2
 set shiftwidth=2
 set nowrap
 set nopaste
-set textwidth=79
 set autoindent
 set backspace=indent,eol,start
 set autoindent
@@ -36,6 +35,8 @@ set mat=5
 set winheight=15
 set hlsearch
 set number
+set textwidth=0
+autocmd BufRead,BufNewFile *.html,*.md set tw=79 nonumber
 highlight LineNr ctermfg=grey
 let @j = '/Beginning of Journalokkkk80i-j! datei## jzzi'
 let @s = '[s1g='
