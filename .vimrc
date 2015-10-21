@@ -36,7 +36,7 @@ set winheight=15
 set hlsearch
 set number
 set textwidth=0
-autocmd BufRead,BufNewFile *.html,*.md set tw=79 no:number
+autocmd BufRead,BufNewFile *.html,*.md set tw=79 nonumber
 autocmd BufRead,BufNewFile index.html set syntax=markdown spell
 highlight LineNr ctermfg=grey
 let @j = '/Beginning of Journalokkkk80i-j! datei## jzzi'
