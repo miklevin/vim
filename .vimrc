@@ -42,7 +42,6 @@ highlight LineNr ctermfg=grey
 let @j = '/Beginning of Journalokkkk80i-j! datei## jzzi'
 let @s = '[s1g='
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
-imap jj <Esc>
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
