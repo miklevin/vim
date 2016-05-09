@@ -40,8 +40,9 @@ autocmd BufRead,BufNewFile *.html,*.md set tw=79 nonumber
 autocmd BufRead,BufNewFile index.html set syntax=markdown spell
 highlight LineNr ctermfg=grey
 let @j = '/Beginning of Journalokkkk80i-j! datei## jzzi'
-let @s = '[s1g='
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
+let @c = ':retab:%s/\s\+$//'
+let @s = '[s1g='
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
