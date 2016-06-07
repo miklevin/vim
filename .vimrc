@@ -11,7 +11,7 @@ endif
 syntax on
 syntax enable
 hi SpellBad ctermbg=052
-hi Visual term=reverse cterm=reverse guibg=Grey
+hi Visual term=reverse cterm=reverse guibg=Gray
 autocmd BufEnter * :syntax sync fromstart
 set autoindent
 set background=dark
