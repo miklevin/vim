@@ -10,7 +10,8 @@ let &t_Sb=nr2char(27).'[4%p1%dm'
 endif
 syntax on
 syntax enable
-highlight SpellBad ctermbg=052
+hi SpellBad ctermbg=052
+hi Visual term=reverse cterm=reverse guibg=Grey
 autocmd BufEnter * :syntax sync fromstart
 set autoindent
 set background=dark
