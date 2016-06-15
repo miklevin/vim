@@ -1,2 +1,3 @@
 set runtimepath+=$HOME/Dropbox/vim
 source $HOME/Dropbox/Github/vim/.vimrc
+set spellfile=$HOME/Dropbox/vim/en.utf-8.add
