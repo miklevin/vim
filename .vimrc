@@ -10,31 +10,29 @@ let &t_Sb=nr2char(27).'[4%p1%dm'
 endif
 syntax on
 syntax enable
-highlight SpellBad ctermbg=052
+hi SpellBad ctermbg=052
 autocmd BufEnter * :syntax sync fromstart
-set mouse=a
+set autoindent
+set background=dark
+set backspace=indent,eol,start
+set clipboard+=unnamed
 set encoding=utf8
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set nowrap
-set nopaste
-set autoindent
-set backspace=indent,eol,start
-set autoindent
-set backspace=indent,eol,start
-set incsearch
-set ignorecase
-set ruler
-set wildmenu
 set foldlevel=0
-set clipboard+=unnamed
-set background=dark
-set mat=5
-set winheight=15
 set hlsearch
+set ignorecase
+set incsearch
+set mat=5
+set mouse=a
+set nopaste
+set nowrap
 set number
+set ruler
+set shiftwidth=2
+set tabstop=2
 set textwidth=0
+set wildmenu
+set winheight=15
 autocmd BufRead,BufNewFile *.html,*.md set tw=79 nonumber
 autocmd BufRead,BufNewFile index.html set syntax=markdown spell
 highlight LineNr ctermfg=grey
