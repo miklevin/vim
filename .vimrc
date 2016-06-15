@@ -28,8 +28,8 @@ set nopaste
 set nowrap
 set number
 set ruler
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set textwidth=0
 set wildmenu
 set winheight=15
