@@ -47,6 +47,6 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-" Toggle spell checking on and off with `,s`
-let mapleader = ","
-nmap <silent> <leader>s :set spell!<CR>
+noremap <F2> :set spell! <CR>
+noremap <F3> :set relativenumber! <CR>
+noremap <F4> :set number! <CR>
