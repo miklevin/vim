@@ -8,6 +8,7 @@
 "   let &t_Sb=nr2char(27).'[4%dm'
 " endif
 "endif
+set spellfile=~/vim/en.utf-8.add
 set t_Co=256
 syntax on
 syntax enable
