@@ -26,7 +26,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set mat=5
-set mouse=a
+"set mouse=a
 set nopaste
 set nowrap
 set number
