@@ -12,9 +12,6 @@ set spellfile=~/vim/en.utf-8.add
 set t_Co=256
 syntax on
 syntax enable
-"hi SpellBad ctermbg=052
-hi SpellBad ctermbg=008
-autocmd BufEnter * :syntax sync fromstart
 set autoindent
 set background=dark
 set backspace=indent,eol,start
@@ -26,7 +23,6 @@ set hlsearch
 set ignorecase
 set incsearch
 set mat=5
-"set mouse=a
 set nopaste
 set nowrap
 set number
@@ -37,8 +33,13 @@ set tabstop=4
 set textwidth=0
 set wildmenu
 set winheight=15
+autocmd BufEnter * :syntax sync fromstart
 autocmd BufRead,BufNewFile index.html set syntax=off spell tw=79 
-highlight LineNr ctermfg=grey
+autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79 
+hi SpellBad ctermbg=008
+hi LineNr ctermfg=grey
+hi Visual ctermbg=green
+hi Visual ctermfg=black
 let @j = '/Beginning of Journalokkkk80i-j! datei## jzzi'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @c = ':retab:%s/\s\+$//'
