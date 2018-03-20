@@ -39,8 +39,9 @@ autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79
 hi SpellBad ctermbg=008
 hi LineNr ctermfg=grey
 hi Visual ctermbg=green
-hi Visual ctermfg=black
-let @j = '/Beginning of Journalokkkk80i-j! datei## jzzi'
+hi Cursor ctermbg=green
+hi Cursor ctermfg=black
+let @j = '/Beginning of Journalokkkk80i-j! datewwwD0i## jzzi'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @c = ':retab:%s/\s\+$//'
 let @s = '[s1g='
