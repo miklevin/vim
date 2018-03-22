@@ -39,6 +39,7 @@ autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79
 hi SpellBad ctermbg=008
 hi LineNr ctermfg=grey
 hi Visual ctermbg=green
+hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
 let @j = '/Beginning of Journalokkkk80i-j! datewwwD0i## jzzi'
