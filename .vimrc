@@ -46,8 +46,7 @@ let @j = '/Beginning of Journalokkkk80i-j! datewwwD0i## jzzi'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @c = ':retab:%s/\s\+$//'
 let @s = '[s1g='
-let @p = 'vip:s/\n/ oj'
-let @w = 'vip:w !cat > /dev/clipboard'
+let @p = '?-----Vj/-----ky:b2ggpjo### '
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
