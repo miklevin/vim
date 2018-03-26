@@ -42,7 +42,7 @@ hi Visual ctermbg=green
 hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
-let @j = '/Beginning of Journalokkkk80i-j! datewwwD0i## jzzi'
+let @j = '/Beginning of Journalokkkk80i-j! datewwwv$bhd0i## jzzi'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @c = ':retab:%s/\s\+$//'
 let @s = '[s1g='
