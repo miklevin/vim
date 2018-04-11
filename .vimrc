@@ -1,4 +1,4 @@
-set spellfile=~/vim/en.utf-8.add
+set spellfile=~/.vim/en.utf-8.add
 set t_Co=256
 syntax on
 syntax enable
