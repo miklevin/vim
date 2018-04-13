@@ -37,7 +37,8 @@ let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jzzi
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @c = ':retab:%s/\s\+$//'
-let @s = ':s/\n\n/\r/gcc'
+let @l = ':s/\n\n/\r/gcc'
+let @s = '[s1z=w'
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
