@@ -24,6 +24,7 @@ set textwidth=0
 set wildmenu
 set winheight=15
 set noerrorbells
+set belloff=all
 autocmd BufEnter * :syntax sync fromstart
 autocmd BufRead,BufNewFile journal.md set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79 
