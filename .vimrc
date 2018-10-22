@@ -1,4 +1,4 @@
-set spellfile=~/.vim/en.utf-8.add
+set spellfile=~/vim/en.utf-8.add
 set t_Co=256
 syntax on
 syntax enable
@@ -23,8 +23,6 @@ set tabstop=4
 set textwidth=0
 set wildmenu
 set winheight=15
-set noerrorbells
-set belloff=all
 autocmd BufEnter * :syntax sync fromstart
 autocmd BufRead,BufNewFile journal.md set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79 
@@ -39,8 +37,7 @@ let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jzzi
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @c = ':retab:%s/\s\+$//'
-let @l = ':s/\n\n/\r/gcc'
-let @s = '[s1z=e'
+let @s = ':s/\n\n/\r/gcc'
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
