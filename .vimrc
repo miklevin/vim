@@ -1,14 +1,4 @@
-"if &term =~ "xterm"
-" set t_Co=256
-" if has("terminfo")
-"   let &t_Sf=nr2char(27).'[3%p1%dm'
-"let &t_Sb=nr2char(27).'[4%p1%dm'
-" else
-"   let &t_Sf=nr2char(27).'[3%dm'
-"   let &t_Sb=nr2char(27).'[4%dm'
-" endif
-"endif
-set spellfile=~/vim/en.utf-8.add
+set spellfile=~/.vim/en.utf-8.add
 set t_Co=256
 syntax on
 syntax enable
@@ -33,20 +23,24 @@ set tabstop=4
 set textwidth=0
 set wildmenu
 set winheight=15
+set noerrorbells
+set belloff=all
 autocmd BufEnter * :syntax sync fromstart
 autocmd BufRead,BufNewFile journal.md set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79 
 hi SpellBad ctermbg=008
 hi LineNr ctermfg=grey
 hi Visual ctermbg=green
+hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
-let @j = '/Beginning of Journalokkkk80i-j! datewwwD0i## jzzi'
+let @t = '/# TO-DOz'
+let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jzzi'
+let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @c = ':retab:%s/\s\+$//'
-let @s = '[s1g='
-let @p = 'vip:s/\n/ oj'
-let @w = 'vip:w !cat > /dev/clipboard'
+let @l = ':s/\n\n/\r/gcc'
+let @s = '[s1z=e'
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
