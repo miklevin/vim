@@ -41,6 +41,7 @@ let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @c = ':retab:%s/\s\+$//'
 let @l = ':s/\n\n/\r/gcc'
 let @s = '[s1z=e'
+let @n = ':!node %'
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
