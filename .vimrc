@@ -34,13 +34,13 @@ hi Visual ctermbg=green
 hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
-let @t = '/# TO-DOz'
 let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkzzi'
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
-let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
-let @c = ':retab:%s/\s\+$//'
-let @l = ':s/\n\n/\r/gcc'
 let @s = '[s1z=e'
+let @c = ':retab:%s/\s\+$//'
+let @r = ':%s/\(^\n$\)\+/\r'
+let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
+let @l = ':s/\n\n/\r/gcc'
 let @n = ':!node %'
 noremap <Up> <NOP>
 noremap <Down> <NOP>
