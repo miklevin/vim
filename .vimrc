@@ -26,7 +26,7 @@ set winheight=15
 set noerrorbells
 set belloff=all
 autocmd BufEnter * :syntax sync fromstart
-autocmd BufRead,BufNewFile journal.md set syntax=on spell tw=79 
+autocmd BufRead,BufNewFile journal.txt set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79 
 hi SpellBad ctermbg=008
 hi LineNr ctermfg=grey
