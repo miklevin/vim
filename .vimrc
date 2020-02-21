@@ -26,6 +26,7 @@ set winheight=15
 set noerrorbells
 set belloff=all
 autocmd BufEnter * :syntax sync fromstart
+autocmd BufRead,BufNewFile changelog.txt set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile journal.txt set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79 
 hi SpellBad ctermbg=008
@@ -35,6 +36,7 @@ hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
 let @j = ':%s/\(^\n$\)\+/\r/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkzzi'
+let @g = ':%s/\(^\n$\)\+/\r/CHANGE LOGokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkzzi'
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
 let @s = '[s1z=e'
 let @c = ':retab:%s/\s\+$//'
