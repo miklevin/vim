@@ -1,10 +1,9 @@
-set spellfile=~/.vim/en.utf-8.add
-set t_Co=256
 syntax on
 syntax enable
 set autoindent
 set background=dark
 set backspace=indent,eol,start
+set belloff=all
 set clipboard+=unnamed
 set encoding=utf8
 set expandtab
@@ -13,20 +12,20 @@ set hlsearch
 set ignorecase
 set incsearch
 set mat=5
+set noerrorbells
 set nopaste
 set nowrap
 set number
 set relativenumber
 set ruler
 set shiftwidth=4
+set spellfile=~/.vim/en.utf-8.add
+set t_Co=256
 set tabstop=4
 set textwidth=0
 set wildmenu
 set winheight=15
-set noerrorbells
-set belloff=all
 autocmd BufEnter * :syntax sync fromstart
-autocmd BufRead,BufNewFile changelog.txt set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile journal.txt set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79 
 hi SpellBad ctermbg=008
@@ -35,15 +34,13 @@ hi Visual ctermbg=green
 hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
-let @j = ':%s/\(^\n$\)\+/\r/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkzzi'
-let @g = ':%s/\(^\n$\)\+/\r/CHANGE LOGokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkzzi'
+let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkzzi'
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
-let @s = '[s1z=e'
-let @c = ':retab:%s/\s\+$//'
-let @r = ':%s/\(^\n$\)\+/\r'
+let @t = ':set expandtab:retab:%s/\s\+$//'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
-let @l = ':s/\n\n/\r/gcc'
+let @r = ':%s/\(^\n$\)\+/\r'
 let @n = ':!node %'
+let @s = '[s1z=e'
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
