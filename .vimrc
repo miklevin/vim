@@ -50,5 +50,3 @@ noremap <Right> <NOP>
 noremap <F2> :set spell! <CR>
 noremap <F3> :set relativenumber! <CR>
 noremap <F4> :set number! <CR>
-noremap <C-n> :w <CR> :bn <CR> gg :file <CR> M
-noremap <C-p> :w <CR> :bp <CR> gg :file <CR> M
