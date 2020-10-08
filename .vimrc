@@ -37,7 +37,7 @@ hi Visual ctermbg=green
 hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
-let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkzzi'
+let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkzzi'
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
 let @t = ':set expandtab:retab:%s/\s\+$//'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
