@@ -1,3 +1,8 @@
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[1 q"
+autocmd VimLeave * silent !echo -ne "\e[1 q"
+augroup END
 syntax on
 syntax enable
 set autoindent
