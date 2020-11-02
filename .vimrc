@@ -36,6 +36,7 @@ autocmd BufRead,BufNewFile journal.md set syntax=on spell tw=79
 autocmd BufRead,BufNewFile notes.md set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile README.md set syntax=on spell tw=79 
+autocmd BufRead,BufNewFile *.js set tabstop=2 shiftwidth=2
 hi SpellBad ctermbg=008
 hi LineNr ctermfg=grey
 hi Visual ctermbg=green
