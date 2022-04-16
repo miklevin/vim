@@ -32,6 +32,7 @@ set wildmenu
 set winheight=15
 autocmd BufEnter * :syntax sync fromstart
 autocmd BufRead,BufNewFile journal.txt set syntax=on spell tw=79 
+autocmd BufRead,BufNewFile index.md set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile journal.md set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile notes.md set syntax=on spell tw=79 
 autocmd BufRead,BufNewFile README.rst set syntax=on spell tw=79 
@@ -43,7 +44,7 @@ hi Visual ctermbg=green
 hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
-let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkzzi'
+let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkkzzi'
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
 let @t = ':set expandtab:retab:%s/\s\+$//'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
