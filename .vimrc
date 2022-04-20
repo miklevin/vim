@@ -59,4 +59,5 @@ noremap <F2> :set spell! <CR>
 noremap <F3> :set relativenumber! <CR>
 noremap <F4> :set number! <CR>
 nnoremap <C-n> :bnext<CR>
+nnoremap <C-b> :bprev<CR>
 nnoremap <C-p> :bprevious<CR>
