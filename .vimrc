@@ -44,6 +44,9 @@ hi Visual ctermbg=green
 hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
+let @0 = ':b1'
+let @g = ':sil !./gall.sh:bnbp'
+let @y = '0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
 let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkkzzi'
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
 let @t = ':set expandtab:retab:%s/\s\+$//'
