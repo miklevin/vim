@@ -27,7 +27,7 @@ set shiftwidth=4
 set spellfile=~/.vim/en.utf-8.add
 set t_Co=256
 set tabstop=4
-set textwidth=0
+set textwidth=79
 set wildmenu
 set winheight=15
 autocmd BufEnter * :syntax sync fromstart
