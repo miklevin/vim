@@ -27,7 +27,7 @@ set shiftwidth=4
 set spellfile=~/.vim/en.utf-8.add
 set t_Co=256
 set tabstop=4
-set textwidth=79
+set textwidth=0
 set wildmenu
 set winheight=15
 autocmd BufEnter * :syntax sync fromstart
@@ -47,12 +47,11 @@ hi Cursor ctermfg=black
 let @0 = ':b1'
 let @g = ':sil !./gall.sh:redraw!'
 let @y = '0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
-let @j = '/Beginning of Journalokkkk80i-j! datewwwhi, lv$bhd0i## jikkkkkkkkkkkkkkzzi'
+let @j = '/Beginning of Journalokkkk80i-j! date +"\%a \%b \%d, \%Y"i## 0jikkkkkkkkkkkkkkkkkkkkkkzz'
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
 let @t = ':set expandtab:retab:%s/\s\+$//'
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @r = ':%s/\(^\n$\)\+/\r'
-let @n = ':!node %'
 let @s = '[s1z=e'
 noremap <Up> <NOP>
 noremap <Down> <NOP>
