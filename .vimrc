@@ -45,7 +45,7 @@ hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
 let @0 = ':b1'
-let @g = ':sil !/mnt/c/Users/mikle/github/gall.sh:redraw!'
+let @g = ':sil !/mnt/c/Users/mikle/github/blast.sh:redraw!'
 let @y = '0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
 let @j = '/Beginning of Journalokkkk80i-j! date +"\%a \%b \%d, \%Y"i## 0jikkkkkkkkkkkkkkkkkkkkkkzzi'
 let @p = '?--------------------------------------------------------------------------------jji### Published:wkkkVj/--------------------------------------------------------------------------------ky:bnggpjjddoki### kdd$a'
