@@ -61,3 +61,5 @@ noremap <F2> :set spell! <CR>
 noremap <F3> :set relativenumber! <CR>
 noremap <F4> :set number! <CR>
 nnoremap <C-@> :bnext<CR>
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
