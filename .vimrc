@@ -1,3 +1,10 @@
+"        _                    
+" __   _(_)_ __ ___  _ __ ___ 
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__ 
+" (_)_/ |_|_| |_| |_|_|  \___|
+" It's not emacs, but it'll do.
+                            
 augroup myCmds
 au!
 autocmd VimEnter * silent !echo -ne "\e[1 q"
