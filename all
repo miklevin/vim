@@ -1,0 +1,50 @@
+#!/home/healus/py310/bin/python
+
+import shlex
+import shutil
+import pandas as pd
+from os import system
+from sys import stdout
+from subprocess import Popen, PIPE
+
+df = pd.read_csv("~/github/journal/sites.csv", delimiter="|")
+df = df.applymap(lambda x: x.strip())
+df.columns = [x.strip() for x in df.columns]
+alist = df[['path']].values.tolist()
+journals = " ".join([f'~/{x[0]}/journal.md' for x in alist])
+edit_journals = f"vim {journals} ~/.vimrc"
+system(edit_journals)
+
+
+def flush(std):
+    for line in std:
+        line = line.strip()
+        if line:
+            print(line)
+            stdout.flush()
+
+
+def git(cwd, args):
+    cmd = ["/usr/bin/git"] + shlex.split(args)
+    print(f"COMMAND: << {shlex.join(cmd)} >>")
+    process = Popen(
+        args=cmd,
+        cwd=cwd,
+        stdout=PIPE,
+        stderr=PIPE,
+        shell=False,
+        bufsize=1,
+        universal_newlines=True,
+    )
+    flush(process.stdout)
+    flush(process.stderr)
+
+
+shutil.copyfile("/home/healus/.vimrc", "/home/healus/github/vim/.vimrc")
+shutil.copyfile("/usr/local/sbin/all", "/home/healus/github/vim/all")
+
+loc = "/home/healus/github/vim"
+git(loc, 'commit -am "Pushing .vimrc to Github..."')
+git(loc, "push")
+
+print("Done")
