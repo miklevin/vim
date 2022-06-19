@@ -41,6 +41,7 @@ def git(cwd, args):
 
 
 shutil.copyfile("/home/healus/.vimrc", "/home/healus/github/vim/.vimrc")
+shutil.copyfile("/home/healus/.bash_profile", "/home/healus/github/vim/.bash_profile")
 shutil.copyfile("/usr/local/sbin/all", "/home/healus/github/vim/all")
 
 loc = "/home/healus/github/vim"
