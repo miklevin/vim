@@ -9,6 +9,9 @@ from sys import stdout
 from subprocess import Popen, PIPE
 
 
+# Set Default Number of Files to Edit
+default_number = 6
+
 aparser = argparse.ArgumentParser()
 add_arg = aparser.add_argument
 add_arg("-n", "--number", required=False)
@@ -18,7 +21,7 @@ df = pd.read_csv("~/github/journal/sites.csv", delimiter="|")
 df = df.applymap(lambda x: x.strip())
 df.columns = [x.strip() for x in df.columns]
 if number == None:
-    df = df.head(6)
+    df = df.head(default_number)
 elif number.isnumeric():
     number = int(number)
     if number > df.shape[0]:
