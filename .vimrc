@@ -8,7 +8,7 @@
 syntax on
 syntax enable
 autocmd BufEnter * :syntax sync fromstart
-autocmd BufRead,BufNewFile * set syntax=on spell tw=79
+autocmd BufRead,BufNewFile *md.txt set syntax=on spell tw=79
 set autoindent
 set background=dark
 set backspace=indent,eol,start
