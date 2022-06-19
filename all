@@ -19,6 +19,9 @@ df = pd.read_csv("~/github/journal/sites.csv", delimiter="|")
 df = df.applymap(lambda x: x.strip())
 df.columns = [x.strip() for x in df.columns]
 if number and number.isnumeric():
+    number = int(number)
+    if number > df.shape[1]:
+        number = df.shape[1]
     df = df.head(number)
 else:
     df = df.head(6)
