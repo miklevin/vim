@@ -1,3 +1,4 @@
+
 "        _                    
 " __   _(_)_ __ ___  _ __ ___ 
 " \ \ / / | '_ ` _ \| '__/ __|
@@ -55,7 +56,7 @@ let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ /g0/\.v/]h€kbhdlli/assets/images/€ýa0'
 
 "Release currently edited blog.
-let @p = ":execute '!clear;python ~/github/skite/skite/core.py -f ~/github/journal/sites.csv -x ' . expand('%:p:h') . '; read -p \"Press Enter to Continue...\"'"
+let @p = ":execute '!clear;python ~/github/skite/skite/skite.py -f ~/github/journal/sites.csv -x ' . expand('%:p:h') . '; read -p \"Press Enter to Continue...\"'"
 
 "Make new journal entry.
 let @j = '/Beginning of Journalokkkk80i-j! date +"\%a \%b \%d, \%Y"i## 0jikkkkkkkkkkkkkkkkkkkkkkzzi'
@@ -73,7 +74,7 @@ let @s = '[s1z=e'
 let @y = '0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
 
 "Backup all sites to Github.
-let @z = ":execute '!clear;python ~/github/skite/skite/core.py -f ~/github/journal/sites.csv; read -p \"Press Enter to Continue...\"'"
+let @z = ":execute '!clear;python ~/github/skite/skite/skite.py -f ~/github/journal/sites.csv; read -p \"Press Enter to Continue...\"'"
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
