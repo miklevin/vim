@@ -11,13 +11,17 @@ from subprocess import Popen, PIPE
 
 aparser = argparse.ArgumentParser()
 add_arg = aparser.add_argument
-add_arg("-n", "--number", required=False, default=6)
+add_arg("-n", "--number", required=False)
 args = aparser.parse_args()
-apex = args.number
+number = args.number
 
 df = pd.read_csv("~/github/journal/sites.csv", delimiter="|")
 df = df.applymap(lambda x: x.strip())
 df.columns = [x.strip() for x in df.columns]
+if number and number.isnumeric():
+    df = df.head(number)
+else:
+    df = df.head(6)
 alist = df[['path']].values.tolist()
 journals = " ".join([f'~/{x[0]}/journal.md' for x in alist])
 edit_journals = f"vim {journals} ~/.vimrc"
