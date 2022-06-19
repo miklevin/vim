@@ -48,4 +48,4 @@ loc = "/home/healus/github/vim"
 git(loc, 'commit -am "Pushing .vimrc to Github..."')
 git(loc, "push")
 
-print("Done")
+print("Done!")

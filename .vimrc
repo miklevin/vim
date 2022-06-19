@@ -5,14 +5,11 @@
 " (_)_/ |_|_| |_| |_|_|  \___|
 " It's not emacs, but it'll do.
                             
-" augroup myCmds
-" au!
-" autocmd VimEnter * silent !echo -ne "\e[1 q"
-" autocmd VimLeave * silent !echo -ne "\e[1 q"
-" augroup END
-" syntax on
+syntax on
 syntax enable
-set tw=79
+autocmd FileType text setlocal textwidth=79 formatoptions+=t
+autocmd BufEnter * :syntax sync fromstart
+autocmd BufRead,BufNewFile .vimrc set tabstop=2 tw=0
 set autoindent
 set background=dark
 set backspace=indent,eol,start
@@ -38,8 +35,6 @@ set tabstop=4
 set textwidth=0
 set wildmenu
 set winheight=15
-autocmd BufEnter * :syntax sync fromstart
-autocmd BufRead,BufNewFile .vimrc set tabstop=2 tw=0
 hi SpellBad ctermbg=008
 hi LineNr ctermfg=grey
 hi Visual ctermbg=green
