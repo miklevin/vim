@@ -18,13 +18,16 @@ number = args.number
 df = pd.read_csv("~/github/journal/sites.csv", delimiter="|")
 df = df.applymap(lambda x: x.strip())
 df.columns = [x.strip() for x in df.columns]
-if number and number.isnumeric():
-    number = int(number)
-if number and number > df.shape[1]:
-    number = df.shape[1]
-    df = df.head(number)
-else:
+
+
+if number == None:
     df = df.head(6)
+elif number.isnumeric():
+    number = int(number)
+    if number > df.shape[1]:
+        number = df.shape[1]
+    df = df.head(number)
+
 alist = df[['path']].values.tolist()
 journals = " ".join([f'~/{x[0]}/journal.md' for x in alist])
 edit_journals = f"vim {journals} ~/.vimrc"
