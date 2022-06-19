@@ -9,6 +9,7 @@ syntax on
 syntax enable
 autocmd BufEnter * :syntax sync fromstart
 autocmd BufRead,BufNewFile *md.txt set syntax=on spell tw=79
+
 set autoindent
 set background=dark
 set backspace=indent,eol,start
@@ -40,17 +41,36 @@ hi Visual ctermbg=green
 hi Visual ctermfg=black
 hi Cursor ctermbg=green
 hi Cursor ctermfg=black
+
+"MACRO DEFINITIONS
+
+"Fill-in missing headlines in blog.
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
+
+"Turn image filename into markdown.
 let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ /g0/\.v/]h€kbhdlli/assets/images/€ýa0'
-let @g = ":execute '!clear;python ~/github/skite/skite/core.py -f ~/github/journal/sites.csv; read -p \"Press Enter to Continue...\"'"
+
+"Release currently edited blog.
 let @p = ":execute '!clear;python ~/github/skite/skite/core.py -f ~/github/journal/sites.csv -x ' . expand('%:p:h') . '; read -p \"Press Enter to Continue...\"'"
+
+"Make new journal entry.
 let @j = '/Beginning of Journalokkkk80i-j! date +"\%a \%b \%d, \%Y"i## 0jikkkkkkkkkkkkkkkkkkkkkkzzi'
+
+"Format poem (requires visual block selection +2 lines)
 let @o = ':€PS%norm i> ^[A<br />[201~€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kbi>n€kb A<br />0lli<cite>&#151;Mike Levin, 2022</cite>€ýa0j'
+
+"Strip out excess line returns in blog.
 let @r = ':%s/\(^\n$\)\+/\r'
+
+"Replace mispelling before cursor with recommended.
 let @s = '[s1z=e'
-let @t = ':set expandtab:retab:%s/\s\+$//'
-let @t = '[s1z='
+
+"Expand YouTube videoID to markdown for embed.
 let @y = '0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
+
+"Backup all sites to Github.
+let @z = ":execute '!clear;python ~/github/skite/skite/core.py -f ~/github/journal/sites.csv; read -p \"Press Enter to Continue...\"'"
+
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
