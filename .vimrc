@@ -8,7 +8,11 @@
 syntax on
 syntax enable
 autocmd BufEnter * :syntax sync fromstart
-autocmd BufRead,BufNewFile *md.txt set syntax=on spell tw=79
+autocmd BufRead,BufNewFile *.md set syntax=on spell tw=79
+
+" These change the cursor between a block and I-beam
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 set autoindent
 set background=dark
@@ -80,8 +84,5 @@ noremap <F3> :set relativenumber! <CR>
 noremap <F4> :set number! <CR>
 nnoremap <C-@> :bnext<CR>
 
-" These change the cursor between a block and I-beam
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
 
 
