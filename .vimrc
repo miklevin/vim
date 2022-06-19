@@ -12,6 +12,7 @@
 " augroup END
 " syntax on
 syntax enable
+set tw=79
 set autoindent
 set background=dark
 set backspace=indent,eol,start
