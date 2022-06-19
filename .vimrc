@@ -7,7 +7,7 @@
                             
 syntax on
 syntax enable
-autocmd FileType text setlocal textwidth=79 formatoptions+=t
+autocmd FileType * set textwidth=79
 set autoindent
 set background=dark
 set backspace=indent,eol,start
