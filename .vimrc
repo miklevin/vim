@@ -42,7 +42,7 @@ hi Cursor ctermbg=green
 hi Cursor ctermfg=black
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ /g0/\.v/]h€kbhdlli/assets/images/€ýa0'
-let @g = ":execute '!clear;python ~/github/skite/skite/core.py -f ~/github/skite/sites.csv -x ' . expand('%:p:h') . '; read -p \"Press Enter to Continue...\"'"
+let @g = ":execute '!clear;python ~/github/skite/skite/core.py -f ~/github/journal/sites.csv -x ' . expand('%:p:h') . '; read -p \"Press Enter to Continue...\"'"
 let @j = '/Beginning of Journalokkkk80i-j! date +"\%a \%b \%d, \%Y"i## 0jikkkkkkkkkkkkkkkkkkkkkkzzi'
 let @p = ':€PS%norm i> ^[A<br />[201~€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kbi>n€kb A<br />0lli<cite>&#151;Mike Levin, 2022</cite>€ýa0j'
 let @r = ':%s/\(^\n$\)\+/\r'
