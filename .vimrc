@@ -8,8 +8,6 @@
 syntax on
 syntax enable
 autocmd FileType text setlocal textwidth=79 formatoptions+=t
-autocmd BufEnter * :syntax sync fromstart
-autocmd BufRead,BufNewFile .vimrc set tabstop=2 tw=0
 set autoindent
 set background=dark
 set backspace=indent,eol,start
