@@ -36,7 +36,7 @@ set ruler
 set shiftwidth=4
 set spellfile=~/.vim/en.utf-8.add
 set t_Co=256
-set tabstop=4
+set tabstop=2
 set textwidth=0
 set wildmenu
 set winheight=15
