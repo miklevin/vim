@@ -16,6 +16,8 @@ let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
 set autoindent
+set shiftwidth=2
+set tabstop=2
 set background=dark
 set backspace=indent,eol,start
 set belloff=all
@@ -33,10 +35,8 @@ set nowrap
 set number
 set relativenumber
 set ruler
-set shiftwidth=4
 set spellfile=~/.vim/en.utf-8.add
 set t_Co=256
-set tabstop=2
 set textwidth=0
 set wildmenu
 set winheight=15
