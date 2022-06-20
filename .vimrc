@@ -9,7 +9,7 @@
 syntax on
 syntax enable
 autocmd BufEnter * :syntax sync fromstart
-autocmd BufRead,BufNewFile *.md set syntax=on spell tw=79
+autocmd BufRead,BufNewFile *.md set syntax=on spell tw=79 tabstop=2 softtabstop=2
 
 " These change the cursor between a block and I-beam
 let &t_SI = "\e[6 q"
