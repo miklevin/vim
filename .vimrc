@@ -15,7 +15,7 @@ autocmd BufRead,BufNewFile *.md set syntax=on spell tw=79
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-set tabstop=4
+set tabstop=2
 set shiftwidth=2
 set background=dark
 set backspace=indent,eol,start
