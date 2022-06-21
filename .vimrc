@@ -51,9 +51,8 @@ hi Cursor ctermfg=black
 let @a = "iMy Life Stories"
 let @b = "iTechnology & Life Observations"
 let @c = "iStatic Site Generator (Skite)"
-let @d = "iThe Unix (Linux) Way"
-let @e = "iLinux Playgrounds (WSL & LXD)"
-let @f = "iLifecast Lifecast"
+let @d = "iLinux Playgrounds (WSL & LXD)"
+let @e = "iLifecast Lifecast"
 
 "Fill-in missing headlines in blog.
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
