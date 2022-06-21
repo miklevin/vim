@@ -52,7 +52,7 @@ hi Cursor ctermfg=black
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 
 "Fill-in missing category tagging in blog.
-let @t = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n### .*$\n\nzjo### '
+let @t = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n### .*$\n\nzjjocategory: '
 
 "Turn image filename into markdown.
 let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ /g0/\.v/]h€kbhdlli/assets/images/€ýa0'
