@@ -49,10 +49,10 @@ hi Cursor ctermfg=black
 "MACRO DEFINITIONS
 
 let @a = "iMy Life Stories"
-let @b = "iTechnology & Life Observations"
-let @c = "iStatic Site Generator (Skite)"
-let @d = "iLinux Playgrounds (WSL & LXD)"
-let @e = "iLifecast Lifecast"
+let @b = "iNavigating Life Through Livecasting"
+let @c = "iTechnology & Life Observations"
+let @d = "iStatic Site Generator (Skite)"
+let @e = "iLinux Playgrounds (WSL & LXD)"
 
 "Fill-in missing headlines in blog.
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
