@@ -49,7 +49,7 @@ hi Cursor ctermfg=black
 "MACRO DEFINITIONS
 
 let @a = "iMy Life Stories"
-let @b = "iTechnology Observations"
+let @b = "iTechnology & Life Observations"
 let @c = "iStatic Site Generator (Skite)"
 let @d = "iThe Unix (Linux) Way"
 let @e = "iLinux Playgrounds (WSL & LXD)"
