@@ -53,6 +53,7 @@ let @b = "iTechnology Observations"
 let @c = "iStatic Site Generator (Skite)"
 let @d = "iThe Unix (Linux) Way"
 let @e = "iLinux Playgrounds (WSL & LXD)"
+let @f = "iLifecast Lifecast"
 
 "Fill-in missing headlines in blog.
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
