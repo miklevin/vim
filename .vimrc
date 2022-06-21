@@ -48,11 +48,11 @@ hi Cursor ctermfg=black
 
 "MACRO DEFINITIONS
 
-let @a = "iStatic Site Generator"
-let @b = "iLinux Playgrounds"
-let @c = "iThe Unix (Linux) Way"
-let @d = "iTechnology Observations"
-let @e = "iMy Life Stories"
+let @a = "iMy Life Stories"
+let @b = "iTechnology Observations"
+let @c = "iStatic Site Generator (Skite)"
+let @d = "iThe Unix (Linux) Way"
+let @e = "iLinux Playgrounds (WSL & LXD)"
 
 "Fill-in missing headlines in blog.
 let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
