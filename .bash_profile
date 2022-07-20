@@ -9,3 +9,4 @@ alias system="ps --no-headers -o comm 1"
 alias sbin="cd /usr/local/sbin/"
 alias open="explorer.exe ."
 . ~/.bash_prompt
+# lxc exec foo -- su --login ubuntu
