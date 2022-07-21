@@ -8,5 +8,5 @@ alias systemd="cd /etc/systemd/system/"
 alias system="ps --no-headers -o comm 1"
 alias sbin="cd /usr/local/sbin/"
 alias open="explorer.exe ."
+alias lxme="lxc exec GlookingLass -- su --login ubuntu"
 . ~/.bash_prompt
-# lxc exec foo -- su --login ubuntu
