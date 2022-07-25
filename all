@@ -1,5 +1,9 @@
 #!/home/healus/py310/bin/python
 
+# When setting up a new LXD container:
+# lxc config device add GlookingLass github disk source=/mnt/c/Users/mikle/github/ path=/home/ubuntu/github/
+# lxc config device add GlookingLass dotssh disk source=/mnt/c/Users/mikle/.ssh/ path=/home/ubuntu/.ssh/
+
 import shlex
 import shutil
 import argparse
