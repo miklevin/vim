@@ -14,7 +14,7 @@ from subprocess import Popen, PIPE
 
 
 # Set Default Number of Files to Edit
-default_number = 2
+default_number = 0
 
 aparser = argparse.ArgumentParser()
 add_arg = aparser.add_argument
