@@ -1,5 +1,6 @@
 source ~/py310/bin/activate
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+echo "export DISPLAY=${DISPLAY}" > ~/data/display.sh
 cd ~/github/
 alias profile="vim ~/.bash_profile"
 alias github="cd ~/github"
