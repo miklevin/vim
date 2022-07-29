@@ -1,3 +1,4 @@
+# sudo mount -t drvfs '\\EchidNAS\data' /mnt/data
 source ~/py310/bin/activate
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 echo "export DISPLAY=${DISPLAY}" > ~/data/display.sh
