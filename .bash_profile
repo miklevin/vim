@@ -1,4 +1,3 @@
-# sudo mount -t drvfs '\\EchidNAS\data' /mnt/data
 source ~/py310/bin/activate
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 echo "export DISPLAY=${DISPLAY}" > ~/data/display.sh
@@ -7,6 +6,7 @@ alias profile="vim ~/.bash_profile"
 alias github="cd ~/github"
 alias journal="vim ~/github/journal/journal.md"
 alias systemd="cd /etc/systemd/system/"
+alias data="cd ~/data"
 alias system="ps --no-headers -o comm 1"
 alias sbin="cd /usr/local/sbin/"
 alias open="explorer.exe ."
