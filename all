@@ -66,6 +66,7 @@ def git(cwd, args):
 shutil.copyfile("/home/healus/.vimrc", "/home/healus/github/vim/.vimrc")
 shutil.copyfile("/home/healus/.bash_profile", "/home/healus/github/vim/.bash_profile")
 shutil.copyfile("/usr/local/sbin/all", "/home/healus/github/vim/all")
+shutil.copyfile("/usr/local/sbin/jn", "/home/healus/github/vim/jn")
 
 loc = "/home/healus/github/vim"
 git(loc, 'commit -am "Pushing .vimrc to Github..."')

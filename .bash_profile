@@ -2,6 +2,7 @@ source ~/py310/bin/activate
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 export LIBGL_ALWAYS_INDIRECT=1
 export XCURSOR_SIZE=48
+/usr/local/sbin/jn
 
 echo "export DISPLAY=${DISPLAY}" > ~/data/display.sh
 cd ~/github/
