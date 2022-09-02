@@ -1,3 +1,4 @@
+cd /home/healus/github/practice
 if ! screen -list | grep -q "jupyter"; then
     /usr/bin/screen -dmS jupyter /home/healus/py310/bin/python3.10 /home/healus/py310/bin/jupyter-lab --no-browser
 fi
