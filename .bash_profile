@@ -3,7 +3,6 @@ export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 export LIBGL_ALWAYS_INDIRECT=1
 export XCURSOR_SIZE=48
 export SCREENDIR=$HOME/.screen
-/usr/local/sbin/jn
 
 echo "export DISPLAY=${DISPLAY}" > ~/data/display.sh
 cd ~/github/
@@ -17,4 +16,7 @@ alias sbin="cd /usr/local/sbin/"
 alias open="explorer.exe ."
 alias lxme="lxc exec GlookingLass -- su --login ubuntu"
 alias lx="lxc ls --fast"
+
+nohup /usr/local/sbin/jn >/dev/null 2>&1
+
 . ~/.bash_prompt
