@@ -78,7 +78,7 @@ let @r = ':%s/\(^\n$\)\+/\r'
 let @s = '[s1z=e'
 
 "Expand YouTube videoID to markdown for embed.
-let @y = 's/https:\/\/.*\///gcc0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
+let @y = '0V:s/https:\/\/.*\///gcc0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
 
 "Backup all sites to Github.
 let @z = ":execute '!clear;python ~/github/skite/skite/skite.py -f ~/github/journal/sites.csv; read -p \"Press Enter to Continue...\"'"
