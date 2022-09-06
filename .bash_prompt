@@ -1,96 +1,96 @@
-"        _                    
-" __   _(_)_ __ ___  _ __ ___ 
-" \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__ 
-" (_)_/ |_|_| |_| |_|_|  \___|
-" It's not emacs, but it'll do.
-                            
-syntax on
-syntax enable
-autocmd BufEnter * :syntax sync fromstart
-autocmd BufRead,BufNewFile *.md set syntax=on spell tw=79
+#!/bin/bash
+#
+# DESCRIPTION:
+#
+#   Set the bash prompt according to:
+#    * the active virtualenv
+#    * the branch of the current git/mercurial repository
+#    * the return value of the previous command
+#    * the fact you just came from Windows and are used to having newlines in
+#      your prompts.
+#
+# USAGE:
+#
+#   1. Save this file as ~/.bash_prompt
+#   2. Add the following line to the end of your ~/.bashrc or ~/.bash_profile:
+#        . ~/.bash_prompt
+#
+# LINEAGE:
+#
+#   Based on work by woods
+#
+#   https://gist.github.com/31967
 
-" These change the cursor between a block and I-beam
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
+# The various escape codes that we can use to color our prompt.
+        RED="\[\033[0;31m\]"
+     YELLOW="\[\033[1;33m\]"
+      GREEN="\[\033[0;32m\]"
+       BLUE="\[\033[1;34m\]"
+     PURPLE="\[\033[0;35m\]"
+  LIGHT_RED="\[\033[1;31m\]"
+LIGHT_GREEN="\[\033[1;32m\]"
+      WHITE="\[\033[1;37m\]"
+ LIGHT_GRAY="\[\033[0;37m\]"
+ COLOR_NONE="\[\e[0m\]"
 
-set tabstop=2
-set shiftwidth=2
-set background=dark
-set backspace=indent,eol,start
-set belloff=all
-set clipboard+=unnamed
-set encoding=utf8
-set expandtab
-set foldlevel=0
-set hlsearch
-set ignorecase
-set incsearch
-set mat=5
-set noerrorbells
-set nopaste
-set nowrap
-set number
-set relativenumber
-set ruler
-set spellfile=~/.vim/en.utf-8.add
-set t_Co=256
-set textwidth=0
-set wildmenu
-set winheight=15
-hi SpellBad ctermbg=008
-hi LineNr ctermfg=grey
-hi Visual ctermbg=green
-hi Visual ctermfg=black
-hi Cursor ctermbg=green
-hi Cursor ctermfg=black
+# determine git branch name
+function parse_git_branch(){
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
-"MACRO DEFINITIONS
+# determine mercurial branch name
+function parse_hg_branch(){
+  hg branch 2> /dev/null | awk '{print " (" $1 ")"}'
+}
 
-let @a = "iMy Life Stories"
-let @b = "iNavigating Life Through Livecasting"
-let @c = "iTechnology & Life Observations"
-let @d = "iStatic Site Generator (Skite)"
-let @e = "iLinux Playgrounds (WSL & LXD)"
+# Determine the branch/state information for this git repository.
+function set_git_branch() {
+  # Get the name of the branch.
+  branch=$(parse_git_branch)
+  # if not git then maybe mercurial
+  if [ "$branch" == "" ]
+  then
+    branch=$(parse_hg_branch)
+  fi
 
-"Fill-in missing headlines in blog.
-let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
+  # Set the final branch string.
+  BRANCH="${PURPLE}${branch}${COLOR_NONE} "
+}
 
-"Fill-in missing category tagging in blog.
-let @t = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n### .*$\n\nzjjocategory:  l'
+# Return the prompt symbol to use, colorized based on the return value of the
+# previous command.
+function set_prompt_symbol () {
+  if test $1 -eq 0 ; then
+      PROMPT_SYMBOL="\$"
+  else
+      PROMPT_SYMBOL="${LIGHT_RED}\$${COLOR_NONE}"
+  fi
+}
 
-"Turn image filename into markdown.
-let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ /g0/\.v/]h€kbhdlli/assets/images/€ýa0'
+# Determine active Python virtualenv details.
+function set_virtualenv () {
+  if test -z "$VIRTUAL_ENV" ; then
+      PYTHON_VIRTUALENV=""
+  else
+      PYTHON_VIRTUALENV="${BLUE}[`basename \"$VIRTUAL_ENV\"`]${COLOR_NONE} "
+  fi
+}
 
-"Release currently edited blog.
-let @p = ":execute '!clear;python ~/github/skite/skite/skite.py -f ~/github/journal/sites.csv -x ' . expand('%:p:h') . '; read -p \"Press Enter to Continue...\"'"
+# Set the full bash prompt.
+function set_bash_prompt () {
+  # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
+  # return value of the last command.
+  set_prompt_symbol $?
 
-"Make new journal entry.
-let @j = '/Beginning of Journalokkkk80i-j! date +"\%a \%b \%d, \%Y"i## 0jikkkkkkkkkkkkkkkkkkkkkkzzi'
+  # Set the PYTHON_VIRTUALENV variable.
+  set_virtualenv
 
-"Format poem (requires visual block selection +2 lines)
-let @o = ':€PS%norm i> ^[A<br />[201~€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kbi>n€kb A<br />0lli<cite>&#151;Mike Levin, 2022</cite>€ýa0j'
+  # Set the BRANCH variable.
+  set_git_branch
 
-"Strip out excess line returns in blog.
-let @r = ':%s/\(^\n$\)\+/\r'
+  # Set the bash prompt variable.
+  PS1="${PYTHON_VIRTUALENV}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${COLOR_NONE}${BRANCH}${PROMPT_SYMBOL} "
+}
 
-"Replace mispelling before cursor with recommended.
-let @s = '[s1z=e'
-
-"Expand YouTube videoID to markdown for embed.
-let @y = '0V:s/https:\/\/.*\///gcc0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
-
-"Backup all sites to Github.
-let @z = ":execute '!clear;python ~/github/skite/skite/skite.py -f ~/github/journal/sites.csv; read -p \"Press Enter to Continue...\"'"
-
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-noremap <F2> :set spell! <CR>
-noremap <F3> :set relativenumber! <CR>
-noremap <F4> :set number! <CR>
-nnoremap <C-@> :bnext<CR>
-
-
-
+# Tell bash to execute this function just before displaying its prompt.
+PROMPT_COMMAND=set_bash_prompt
