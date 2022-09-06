@@ -27,7 +27,7 @@ alias lx="lxc ls --fast"
 # Launch Jupyter on a GNU screen
 nohup /usr/local/sbin/jn >/dev/null 2>&1
 
-# Make bash prompt "sophisticated" https://raw.githubusercontent.com/rhopfer/bash-prompt/master/bash_prompt.sh
+# Make bash prompt "sophisticated" Retreive favorite version from your github vim repo.
 . ~/.bash_prompt
 
 
