@@ -1,96 +1,40 @@
-"        _                    
-" __   _(_)_ __ ___  _ __ ___ 
-" \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__ 
-" (_)_/ |_|_| |_| |_|_|  \___|
-" It's not emacs, but it'll do.
-                            
-syntax on
-syntax enable
-autocmd BufEnter * :syntax sync fromstart
-autocmd BufRead,BufNewFile *.md set syntax=on spell tw=79
+# ~/.screenrc
+#
+# Guy Who Tweaks This File and Adds Foul Language Comments:
+#  -- Miles Z. Sterrett <miles.sterrett@gmail.com>
+#
+# Original Author:         Aaron Schaefer <aaron@elasticdog.com>
+# Created:        Sat 05 Aug 2006 06:38:47 PM EDT
+#
+# Settings used to initialize screen sessions
+term screen-256color
+# Change default escape sequence from C-a to a backslash
+#  escape ``                            # default ^Aa
 
-" These change the cursor between a block and I-beam
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
+# Do not display the copyright page
+  startup_message off                  # default: on
 
-set tabstop=2
-set shiftwidth=2
-set background=dark
-set backspace=indent,eol,start
-set belloff=all
-set clipboard+=unnamed
-set encoding=utf8
-set expandtab
-set foldlevel=0
-set hlsearch
-set ignorecase
-set incsearch
-set mat=5
-set noerrorbells
-set nopaste
-set nowrap
-set number
-set relativenumber
-set ruler
-set spellfile=~/.vim/en.utf-8.add
-set t_Co=256
-set textwidth=0
-set wildmenu
-set winheight=15
-hi SpellBad ctermbg=008
-hi LineNr ctermfg=grey
-hi Visual ctermbg=green
-hi Visual ctermfg=black
-hi Cursor ctermbg=green
-hi Cursor ctermfg=black
+# Change the number of scrollback lines
+  defscrollback 10000                   # default: 100
 
-"MACRO DEFINITIONS
+# Ensure the default shell is the same as the $SHELL environment variable
+  shell -$SHELL
 
-let @a = "iMy Life Stories"
-let @b = "iNavigating Life Through Livecasting"
-let @c = "iTechnology & Life Observations"
-let @d = "iStatic Site Generator (Skite)"
-let @e = "iLinux Playgrounds (WSL & LXD)"
+# Make navigating between regions easier
+  bind s split
+  bind j focus down
+  bind k focus up
 
-"Fill-in missing headlines in blog.
-let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
+# Make resizing regions easier
+  bind = resize =
+  bind + resize +1
+  bind - resize -1
 
-"Fill-in missing category tagging in blog.
-let @t = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n### .*$\n\nzjjocategory:  l'
+# Configure status bar at the bottom of the terminal
+  hardstatus alwayslastline
+  hardstatus string "%{= kb}[ %=%{w}%?%-Lw%?%{C}(%{W}%n*%f %t%?(%u)%?%{C})%{w}%?%+Lw%?%?%= %{b}][%{C} %Y.%m.%d %{W}%0c %{b}]"
 
-"Turn image filename into markdown.
-let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ /g0/\.v/]h€kbhdlli/assets/images/€ýa0'
+# Turn off the visual bell
+  vbell off
 
-"Release currently edited blog.
-let @p = ":execute '!clear;python ~/github/skite/skite/skite.py -f ~/github/journal/sites.csv -x ' . expand('%:p:h') . '; read -p \"Press Enter to Continue...\"'"
-
-"Make new journal entry.
-let @j = '/Beginning of Journalokkkk80i-j! date +"\%a \%b \%d, \%Y"i## 0jikkkkkkkkkkkkkkkkkkkkkkzzi'
-
-"Format poem (requires visual block selection +2 lines)
-let @o = ':€PS%norm i> ^[A<br />[201~€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kbi>n€kb A<br />0lli<cite>&#151;Mike Levin, 2022</cite>€ýa0j'
-
-"Strip out excess line returns in blog.
-let @r = ':%s/\(^\n$\)\+/\r'
-
-"Replace mispelling before cursor with recommended.
-let @s = '[s1z=e'
-
-"Expand YouTube videoID to markdown for embed.
-let @y = '0V:s/https:\/\/.*\///gcc0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
-
-"Backup all sites to Github.
-let @z = ":execute '!clear;python ~/github/skite/skite/skite.py -f ~/github/journal/sites.csv; read -p \"Press Enter to Continue...\"'"
-
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-noremap <F2> :set spell! <CR>
-noremap <F3> :set relativenumber! <CR>
-noremap <F4> :set number! <CR>
-nnoremap <C-@> :bnext<CR>
-
-
-
+# End of file
