@@ -25,7 +25,7 @@ alias lxme="lxc exec GlookingLass -- su --login ubuntu"
 alias lx="lxc ls --fast"
 
 # Launch Jupyter on a GNU screen
-nohup /usr/local/sbin/jn >/dev/null 2>&1
+# nohup /usr/local/sbin/jn >/dev/null 2>&1
 
 # Make bash prompt "sophisticated" Retreive favorite version from your github vim repo.
 . ~/.bash_prompt

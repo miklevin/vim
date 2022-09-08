@@ -1,4 +1,4 @@
-read -t 5
+sleep 5
 screen -wipe
 cd /home/healus/github/
 if ! screen -list | grep -q "jupyter"; then
