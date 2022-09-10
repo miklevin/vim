@@ -30,6 +30,5 @@ alias lx="lxc ls --fast"
 # Make bash prompt "sophisticated" Retreive favorite version from your github vim repo.
 . ~/.bash_prompt
 
-
 cd ~/github/
 
