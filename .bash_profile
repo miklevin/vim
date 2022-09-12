@@ -10,12 +10,12 @@ echo "export DISPLAY=${DISPLAY}" > ~/data/display.sh
 # Force graphics rendering onto Windows-side
 export LIBGL_ALWAYS_INDIRECT=1
 
-# Put info on GNU screens. Get .screenrc from: https://raw.githubusercontent.com/wmwong/dotfiles/master/screenrc
+# Put info on GNU screens. Get .screenrc from: https://raw..com/wmwong/dotfiles/master/screenrc
 export SCREENDIR=$HOME/.screen
 
 alias profile="vim ~/.bash_profile"
-alias github="cd ~/github"
-alias journal="vim ~/github/journal/journal.md"
+alias repos="cd ~/repos"
+alias journal="vim ~/repos/journal/journal.md"
 alias systemd="cd /etc/systemd/system/"
 alias data="cd ~/data"
 alias system="ps --no-headers -o comm 1"
@@ -27,8 +27,8 @@ alias lx="lxc ls --fast"
 # Launch Jupyter on a GNU screen
 # nohup /usr/local/sbin/jn >/dev/null 2>&1
 
-# Make bash prompt "sophisticated" Retreive favorite version from your github vim repo.
+# Make bash prompt "sophisticated" Retreive favorite version from your repos vim repo.
 . ~/.bash_prompt
 
-cd ~/github/
+cd ~/repos/
 

@@ -1,9 +1,5 @@
 #!/home/healus/py310/bin/python
 
-# When setting up a new LXD container:
-# lxc config device add GlookingLass github disk source=/mnt/c/Users/mikle/github/ path=/home/ubuntu/github/
-# lxc config device add GlookingLass dotssh disk source=/mnt/c/Users/mikle/.ssh/ path=/home/ubuntu/.ssh/
-
 import shlex
 import shutil
 import argparse
@@ -21,7 +17,7 @@ add_arg = aparser.add_argument
 add_arg("-n", "--number", required=False)
 args = aparser.parse_args()
 number = args.number
-df = pd.read_csv("~/github/journal/sites.csv", delimiter="|")
+df = pd.read_csv("~/repos/journal/sites.csv", delimiter="|")
 df = df.applymap(lambda x: x.strip())
 df.columns = [x.strip() for x in df.columns]
 if number == None:
@@ -63,14 +59,14 @@ def git(cwd, args):
     flush(process.stderr)
 
 
-shutil.copyfile("/home/healus/.screenrc", "/home/healus/github/vim/.screenrc")
-shutil.copyfile("/home/healus/.gitconfig", "/home/healus/github/vim/.gitconfig")
-shutil.copyfile("/home/healus/.bash_prompt", "/home/healus/github/vim/.bash_prompt")
-shutil.copyfile("/home/healus/.bash_profile", "/home/healus/github/vim/.bash_profile")
-shutil.copyfile("/usr/local/sbin/all", "/home/healus/github/vim/all")
-shutil.copyfile("/usr/local/sbin/jn", "/home/healus/github/vim/jn")
+shutil.copyfile("/home/healus/.screenrc", "/home/healus/repos/vim/.screenrc")
+shutil.copyfile("/home/healus/.gitconfig", "/home/healus/repos/vim/.gitconfig")
+shutil.copyfile("/home/healus/.bash_prompt", "/home/healus/repos/vim/.bash_prompt")
+shutil.copyfile("/home/healus/.bash_profile", "/home/healus/repos/vim/.bash_profile")
+shutil.copyfile("/usr/local/sbin/all", "/home/healus/repos/vim/all")
+shutil.copyfile("/usr/local/sbin/jn", "/home/healus/repos/vim/jn")
 
-loc = "/home/healus/github/vim"
+loc = "/home/healus/repos/vim"
 git(loc, 'commit -am "Pushing .vimrc to Github..."')
 git(loc, "push")
 
