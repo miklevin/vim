@@ -1,27 +1,40 @@
-# Activate py310 virtual environment.
+# Lock into Python venv
 source ~/py310/bin/activate
 
-# Color-code prompt.
-. ~/.bash_prompt
+# Set display environment variable to [IP]:0 for VcXsrv or Xming
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 
-# Make gnu screen show more useful information.
+# Put display variable command where Containers can access
+echo "export DISPLAY=${DISPLAY}" > ~/data/display.sh
+
+# Force graphics rendering onto Windows-side
+export LIBGL_ALWAYS_INDIRECT=1
+
+# Put info on GNU screens. Get .screenrc from: https://raw..com/wmwong/dotfiles/master/screenrc
 export SCREENDIR=$HOME/.screen
 
-# Un-comment the following lines to enable Linux graphics using VcXsrv or Xming.
-# export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
-# LIBGL_ALWAYS_INDIRECT=1
+alias jupyter="lxc exec jupyter -- su --login ubuntu"
+alias profile="vim ~/.bash_profile"
+alias repos="cd ~/repos"
+alias journal="vim ~/repos/journal/journal.md"
+alias systemd="cd /etc/systemd/system/"
+alias data="cd ~/data"
+alias system="ps --no-headers -o comm 1"
+alias sbin="cd /usr/local/sbin/"
+alias open="explorer.exe ."
+alias lxme="lxc exec GlookingLass -- su --login ubuntu"
+alias lx="lxc ls --fast"
 
-# Un-comment the following line if you have a shared folder between WSL & LXD
-# and want to enable Linux graphics on LXD.
-# echo "export DISPLAY=${DISPLAY}" > ~/data/display.sh
+# Launch Jupyter on a GNU screen
+# nohup /usr/local/sbin/jn >/dev/null 2>&1
 
-# This runs Jupyter server in a way accessible to WSL upon first Container login.
-# If you have not done so already, execute the following line on WSL to add proxy.
-# lxc config device add kingcoyote jupyme proxy listen=tcp:0.0.0.0:8888 connect=tcp:127.0.0.1:8888
+# Make bash prompt "sophisticated" Retreive favorite version from your repos vim repo.
+. ~/.bash_prompt
 
-# Set Jupyter folder and run in gnu screen in a way accessible from WSL
-cd ~/repos
-screen -wipe >/dev/null 2>&1
-if ! screen -list | grep -q "jupyter"; then
-    screen -dmS jupyter /home/ubuntu/py310/bin/jupyter lab --ip 0.0.0.0 --port 8888 --no-browser --ServerApp.password='argon2:$argon2id$v=19$m=10240,t=10,p=8$ijPab+qx2WAOlDKJiRE56Q$wJ5s4RI9dIw36HxHh+0P6eN8SwqTGy0PmnGe7D+oPlc'
-fi
+cd ~/repos/
+ 
+# until
+#         lxc exec jupyter -- su --login ubuntu 2>/dev/null
+# do
+#         sleep 1
+# done

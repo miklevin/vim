@@ -5,5 +5,3 @@
 	eol = crlf
 	autocrlf = false
 	fileMode = false
-[safe]
-	directory = *
