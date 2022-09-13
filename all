@@ -1,4 +1,4 @@
-#!/home/healus/py310/bin/python
+#!/home/ubuntu/py310/bin/python
 
 import shlex
 import shutil
@@ -59,14 +59,14 @@ def git(cwd, args):
     flush(process.stderr)
 
 
-shutil.copyfile("/home/healus/.screenrc", "/home/healus/repos/vim/.screenrc")
-shutil.copyfile("/home/healus/.gitconfig", "/home/healus/repos/vim/.gitconfig")
-shutil.copyfile("/home/healus/.bash_prompt", "/home/healus/repos/vim/.bash_prompt")
-shutil.copyfile("/home/healus/.bash_profile", "/home/healus/repos/vim/.bash_profile")
-shutil.copyfile("/usr/local/sbin/all", "/home/healus/repos/vim/all")
-shutil.copyfile("/usr/local/sbin/jn", "/home/healus/repos/vim/jn")
+shutil.copyfile("/home/ubuntu/.screenrc", "/home/ubuntu/repos/vim/.screenrc")
+shutil.copyfile("/home/ubuntu/.gitconfig", "/home/ubuntu/repos/vim/.gitconfig")
+shutil.copyfile("/home/ubuntu/.bash_prompt", "/home/ubuntu/repos/vim/.bash_prompt")
+shutil.copyfile("/home/ubuntu/.bash_profile", "/home/ubuntu/repos/vim/.bash_profile")
+shutil.copyfile("/usr/local/sbin/all", "/home/ubuntu/repos/vim/all")
+shutil.copyfile("/usr/local/sbin/jn", "/home/ubuntu/repos/vim/jn")
 
-loc = "/home/healus/repos/vim"
+loc = "/home/ubuntu/repos/vim"
 git(loc, 'commit -am "Pushing .vimrc to Github..."')
 git(loc, "push")
 
