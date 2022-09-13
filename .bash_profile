@@ -13,6 +13,7 @@ export LIBGL_ALWAYS_INDIRECT=1
 # Put info on GNU screens. Get .screenrc from: https://raw..com/wmwong/dotfiles/master/screenrc
 export SCREENDIR=$HOME/.screen
 
+alias jupyter="lxc exec jupyter -- su --login ubuntu"
 alias profile="vim ~/.bash_profile"
 alias repos="cd ~/repos"
 alias journal="vim ~/repos/journal/journal.md"
@@ -32,3 +33,8 @@ alias lx="lxc ls --fast"
 
 cd ~/repos/
 
+until
+        lxc exec jupyter -- su --login ubuntu 2>/dev/null
+do
+        sleep 1
+done
