@@ -5,7 +5,7 @@ source ~/py310/bin/activate
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 
 # Put display variable command where Containers can access
-echo "export DISPLAY=${DISPLAY}" > ~/data/display.sh
+echo "export DISPLAY=${DISPLAY}" > ~/repos/transfer/display.sh
 
 # Force graphics rendering onto Windows-side
 export LIBGL_ALWAYS_INDIRECT=1
@@ -13,7 +13,6 @@ export LIBGL_ALWAYS_INDIRECT=1
 # Put info on GNU screens. Get .screenrc from: https://raw..com/wmwong/dotfiles/master/screenrc
 export SCREENDIR=$HOME/.screen
 
-alias jupyter="lxc exec jupyter -- su --login ubuntu"
 alias profile="vim ~/.bash_profile"
 alias repos="cd ~/repos"
 alias journal="vim ~/repos/journal/journal.md"
