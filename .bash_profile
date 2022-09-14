@@ -32,8 +32,8 @@ alias lx="lxc ls --fast"
 
 cd ~/repos/
  
-# until
-#         lxc exec jupyter -- su --login ubuntu 2>/dev/null
-# do
-#         sleep 1
-# done
+until
+        lxc exec jupyter -- su --login ubuntu 2>/dev/null
+do
+        sleep 1
+done
