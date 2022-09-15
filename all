@@ -64,7 +64,6 @@ shutil.copyfile("/home/healus/.gitconfig", "/home/healus/repos/vim/.gitconfig")
 shutil.copyfile("/home/healus/.bash_prompt", "/home/healus/repos/vim/.bash_prompt")
 shutil.copyfile("/home/healus/.bash_profile", "/home/healus/repos/vim/.bash_profile")
 shutil.copyfile("/usr/local/sbin/all", "/home/healus/repos/vim/all")
-shutil.copyfile("/usr/local/sbin/jn", "/home/healus/repos/vim/jn")
 
 loc = "/home/healus/repos/vim"
 git(loc, 'commit -am "Pushing .vimrc to Github..."')

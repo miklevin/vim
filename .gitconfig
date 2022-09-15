@@ -1,7 +1,3 @@
 [user]
 	email = miklevin@gmail.com
 	name = Mike Levin
-[core]
-	eol = crlf
-	autocrlf = false
-	fileMode = false
