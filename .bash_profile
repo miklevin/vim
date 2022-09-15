@@ -1,5 +1,5 @@
 # Lock into Python venv
-source ~/py310/bin/activate
+# source ~/py310/bin/activate
 
 # Set display environment variable to [IP]:0 for VcXsrv or Xming
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
@@ -32,8 +32,8 @@ alias lx="lxc ls --fast"
 
 cd ~/repos/
  
-until
-        lxc exec jupyter -- su --login ubuntu 2>/dev/null
-do
-        sleep 1
-done
+# until
+#         lxc exec jupyter -- su --login ubuntu 2>/dev/null
+# do
+#         sleep 1
+# done
