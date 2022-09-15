@@ -65,8 +65,17 @@ shutil.copyfile("/home/healus/.bash_prompt", "/home/healus/repos/vim/.bash_promp
 shutil.copyfile("/home/healus/.bash_profile", "/home/healus/repos/vim/.bash_profile")
 shutil.copyfile("/usr/local/sbin/all", "/home/healus/repos/vim/all")
 
+shutil.copyfile("/home/healus/.screenrc", "/home/healus/repos/dotconfigs/.screenrc")
+shutil.copyfile("/home/healus/.gitconfig", "/home/healus/repos/dotconfigs/.gitconfig")
+shutil.copyfile("/home/healus/.bash_prompt", "/home/healus/repos/dotconfigs/.bash_prompt")
+shutil.copyfile("/home/healus/.bash_profile", "/home/healus/repos/dotconfigs/.bash_profile")
+shutil.copyfile("/usr/local/sbin/all", "/home/healus/repos/dotconfigs/all")
+
 loc = "/home/healus/repos/vim"
-git(loc, 'commit -am "Pushing .vimrc to Github..."')
+git(loc, 'commit -am "Pushing vim configs to Github..."')
+git(loc, "push")
+loc = "/home/healus/repos/dotconfigs"
+git(loc, 'commit -am "Pushing dotconfigs to Github..."')
 git(loc, "push")
 
 print("Done!")
