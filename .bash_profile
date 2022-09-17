@@ -5,7 +5,7 @@ source ~/py310/bin/activate
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 
 # Put display variable command where Containers can access
-echo "export DISPLAY=${DISPLAY}" > ~/repos/transfer/display.sh
+echo "export DISPLAY=${DISPLAY}" > ~/repos/transfer/.display.sh
 
 # Force graphics rendering onto Windows-side
 export LIBGL_ALWAYS_INDIRECT=1
