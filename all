@@ -71,10 +71,18 @@ shutil.copyfile("/home/healus/.bash_prompt", "/home/healus/repos/dotconfigs/.bas
 shutil.copyfile("/home/healus/.bash_profile", "/home/healus/repos/dotconfigs/.bash_profile")
 shutil.copyfile("/usr/local/sbin/all", "/home/healus/repos/dotconfigs/all")
 
+print("GIT VIM")
 loc = "/home/healus/repos/vim"
 git(loc, 'commit -am "Pushing vim configs to Github..."')
 git(loc, "push")
+
+print("GIT DOTCONFIGS")
 loc = "/home/healus/repos/dotconfigs"
+git(loc, 'commit -am "pushing dotconfigs to github..."')
+git(loc, "push")
+
+print("GIT JOURNAL")
+loc = "/home/healus/repos/journal"
 git(loc, 'commit -am "Pushing dotconfigs to Github..."')
 git(loc, "push")
 
