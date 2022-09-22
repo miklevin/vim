@@ -89,4 +89,10 @@ loc = "/home/healus/repos/journal"
 git(loc, 'commit -am "Pushing journal to Github..."')
 git(loc, "push")
 
+print()
+print("GIT MIKELEV.IN")
+loc = "/home/healus/repos/MikeLev.in"
+git(loc, 'commit -am "Pushing blog to Github..."')
+git(loc, "push")
+
 print("Done!")
