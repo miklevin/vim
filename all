@@ -36,11 +36,6 @@ elif number.isnumeric():
     df = df.head(number)
     print('hit')
 
-alist = df[['path']].values.tolist()
-journals = " ".join([f'~/{x[0]}/journal.md' for x in alist])
-edit_journals = f"vim {journals} ~/.vimrc"
-system(edit_journals)
-
 
 def flush(std):
     for line in std:
@@ -65,6 +60,20 @@ def git(cwd, args):
     flush(process.stdout)
     flush(process.stderr)
 
+
+alist = df[['path']].values.tolist()
+journals = " ".join([f'~/{x[0]}/journal.md' for x in alist])
+
+fig("Git pulling repos")
+for item in alist:
+    repo = item[0]
+    print(repo)
+    loc = f"/home/{username}/{repo}"
+    git(loc, 'pull')
+    print()
+
+edit_journals = f"vim {journals} ~/.vimrc"
+system(edit_journals)
 
 shutil.copyfile(f"/home/{username}/.screenrc", f"/home/{username}/repos/vim/.screenrc")
 shutil.copyfile(f"/home/{username}/.gitconfig", f"/home/{username}/repos/vim/.gitconfig")
