@@ -67,7 +67,7 @@ def git(cwd, args):
 alist = df[['path']].values.tolist()
 journals = " ".join([f'~/{x[0]}/journal.md' for x in alist])
 
-fig("Pulling repos")
+fig("Pulling Repos")
 
 print("vim")
 loc = f"/home/{username}/repos/vim"
@@ -89,12 +89,13 @@ shutil.copyfile(f"/home/{username}/.bash_prompt", f"/home/{username}/repos/vim/.
 shutil.copyfile(f"/home/{username}/.bash_profile", f"/home/{username}/repos/vim/.bash_profile")
 shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
 
-fig("Pushing repos")
+fig("Pushing Repos")
 
 print("vim")
 loc = f"/home/{username}/repos/vim"
 git(loc, 'commit -am "Pushing vim to Github..."')
 git(loc, "push")
+print()
 
 for item in alist:
     repo = item[0]
