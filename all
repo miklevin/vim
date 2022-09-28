@@ -7,6 +7,7 @@ import pandas as pd
 from os import system
 from os import getuid
 from sys import stdout
+from art import text2art
 from pwd import getpwuid
 from subprocess import Popen, PIPE
 
@@ -14,6 +15,9 @@ username = getpwuid(getuid())[0]
 
 # Set Default Number of Files to Edit
 default_number = 3
+
+fig = lambda x: print(text2art(x))
+fig("Editing Journals")
 
 aparser = argparse.ArgumentParser()
 add_arg = aparser.add_argument
