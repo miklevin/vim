@@ -89,14 +89,13 @@ shutil.copyfile(f"/home/{username}/.bash_prompt", f"/home/{username}/repos/vim/.
 shutil.copyfile(f"/home/{username}/.bash_profile", f"/home/{username}/repos/vim/.bash_profile")
 shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
 
-fig("Committing & Pushing")
+fig("Pushing repos")
 
 print("vim")
 loc = f"/home/{username}/repos/vim"
 git(loc, 'commit -am "Pushing vim to Github..."')
 git(loc, "push")
 
-fig("Git pulling repos")
 for item in alist:
     repo = item[0]
     print(repo)
