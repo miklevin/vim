@@ -62,11 +62,11 @@ def git(cwd, args):
     flush(process.stderr)
 
 
-shutil.copyfile(f"/home/{username}/.screenrc", "/home/{username}/repos/vim/.screenrc")
-shutil.copyfile(f"/home/{username}/.gitconfig", "/home/{username}/repos/vim/.gitconfig")
-shutil.copyfile(f"/home/{username}/.bash_prompt", "/home/{username}/repos/vim/.bash_prompt")
-shutil.copyfile(f"/home/{username}/.bash_profile", "/home/{username}/repos/vim/.bash_profile")
-shutil.copyfile(f"/usr/local/sbin/all", "/home/{username}/repos/vim/all")
+shutil.copyfile(f"/home/{username}/.screenrc", f"/home/{username}/repos/vim/.screenrc")
+shutil.copyfile(f"/home/{username}/.gitconfig", f"/home/{username}/repos/vim/.gitconfig")
+shutil.copyfile(f"/home/{username}/.bash_prompt", f"/home/{username}/repos/vim/.bash_prompt")
+shutil.copyfile(f"/home/{username}/.bash_profile", f"/home/{username}/repos/vim/.bash_profile")
+shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
 
 print()
 print("GIT VIM")
