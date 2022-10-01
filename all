@@ -12,7 +12,7 @@ from pwd import getpwuid
 from subprocess import Popen, PIPE
 
 # Set Default Number of Files to Edit
-default_number = 3
+default_number = 4
 
 # Get Linux Username for portability between systems
 username = getpwuid(getuid())[0]
