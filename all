@@ -69,13 +69,13 @@ journals = " ".join([f'~/{x[0]}/journal.md' for x in alist])
 
 fig("Pulling Repos")
 
-print("vim")
+fig("vim")
 loc = f"/home/{username}/repos/vim"
 git(loc, "pull")
 
 for item in alist:
     repo = item[0]
-    print(repo)
+    fig(repo)
     loc = f"/home/{username}/{repo}"
     git(loc, 'pull')
     print()
