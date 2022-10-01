@@ -75,7 +75,7 @@ git(loc, "pull")
 
 for item in alist:
     repo = item[0]
-    fig(repo)
+    fig(repo[6:])
     loc = f"/home/{username}/{repo}"
     git(loc, 'pull')
     print()
@@ -99,7 +99,7 @@ print()
 
 for item in alist:
     repo = item[0]
-    fig(repo)
+    fig(repo[6:])
     loc = f"/home/{username}/{repo}"
     git(loc, f'commit -am "Pushing {repo} to Github..."')
     git(loc, "push")
