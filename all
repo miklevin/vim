@@ -99,7 +99,7 @@ print()
 
 for item in alist:
     repo = item[0]
-    print(repo)
+    fig(repo)
     loc = f"/home/{username}/{repo}"
     git(loc, f'commit -am "Pushing {repo} to Github..."')
     git(loc, "push")
