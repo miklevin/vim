@@ -128,7 +128,6 @@ vpn
 wikipedia
 woot
 wsl
-wsl2lxd
 www
 yaml
 youtubePlayer
@@ -148,3 +147,9 @@ DataFrame
 dataframes
 dataframe
 JSON
+Kardashev
+JupyerLab
+frontmatter
+globbing
+dirs
+os
