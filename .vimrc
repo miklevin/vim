@@ -4,8 +4,6 @@
 "  \ V /| | | | | | | | | (__ 
 " (_)_/ |_|_| |_| |_|_|  \___|
 " It's not emacs, but it'll do.
-
-scriptencoding utf-8
                             
 syntax on
 syntax enable
@@ -40,8 +38,7 @@ set t_Co=256
 set textwidth=0
 set wildmenu
 set winheight=15
-"hi SpellBad ctermbg=008
-hi SpellBad cterm=underline,bold ctermbg=NONE ctermfg=red
+hi SpellBad ctermbg=008
 hi LineNr ctermfg=grey
 hi Visual ctermbg=green
 hi Visual ctermfg=black
@@ -63,30 +60,28 @@ let @h = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n\nzjo### '
 let @t = 'gg/^-\+$\n## [A-Za-z0-9 ,:]*$\n### .*$\n\nzjjocategory:  l'
 
 "Turn image filename into markdown.
-let @i = '0v$hyi![Â€Ã½a$a](Â€Ã½a$pa)Â€Ã½a0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ /g0/\.v/]hÂ€kbhdlli/assets/images/Â€Ã½a0'
+let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ /g0/\.v/]h€kbhdlli/assets/images/€ýa0'
 
 "Release currently edited blog.
-let @p = ":execute '!clear;python ~/repos/skite/skite/skite.py -f ~/repos/journal/sites.csv -x ' . expand('%:p:h') . '; read -p \"Press Enter to Continue...\"'"
+let @p = ":execute '!clear;python ~/github/skite/skite/skite.py -f ~/github/journal/sites.csv -x ' . expand('%:p:h') . '; read -p \"Press Enter to Continue...\"'"
 
 "Make new journal entry.
 let @j = '/Beginning of Journalokkkk80i-j! date +"\%a \%b \%d, \%Y"i## 0jikkkkkkkkkkkkkkkkkkkkkkzzi'
 
 "Format poem (requires visual block selection +2 lines)
-let @o = ':Â€PS%norm i> ^[A<br />[201~Â€kbÂ€kbÂ€kbÂ€kbÂ€kbÂ€kbÂ€kbÂ€kbÂ€kbÂ€kbÂ€kbÂ€kbi>nÂ€kb A<br />0lli<cite>&#151;Mike Levin, 2022</cite>Â€Ã½a0j'
-
-let @q = ":%s/â€™/'/gcc"
+let @o = ':€PS%norm i> ^[A<br />[201~€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kbi>n€kb A<br />0lli<cite>&#151;Mike Levin, 2022</cite>€ýa0j'
 
 "Strip out excess line returns in blog.
 let @r = ':%s/\(^\n$\)\+/\r'
 
-"Replace misspelling before cursor with recommended.
+"Replace mispelling before cursor with recommended.
 let @s = '[s1z=e'
 
 "Expand YouTube videoID to markdown for embed.
-let @y = '0V:s/https:\/\/.*\///gcc0v$hdi{% include youtubePlayer.html id="pa" %}Â€Ã½a'
+let @y = '0V:s/https:\/\/.*\///gcc0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
 
-"Backup all sites to repos.
-let @z = ":execute '!clear;python ~/repos/skite/skite/skite.py -f ~/repos/journal/sites.csv; read -p \"Press Enter to Continue...\"'"
+"Backup all sites to Github.
+let @z = ":execute '!clear;python ~/github/skite/skite/skite.py -f ~/github/journal/sites.csv; read -p \"Press Enter to Continue...\"'"
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
