@@ -90,7 +90,7 @@ shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
 
 fig("Pushing Repos")
 
-print("vim")
+fig("vim")
 loc = f"/home/{username}/repos/vim"
 git(loc, 'commit -am "Pushing vim to Github..."')
 git(loc, "push")
