@@ -64,7 +64,7 @@ def git(cwd, args):
 
 
 alist = df[['path']].values.tolist()
-journals = " ".join([f'~/{x[0]}/hide/journal.md' for x in alist])
+journals = " ".join([f'~/repos/hide/{x[0]}/journal.md' for x in alist])
 
 fig("Pulling Repos")
 
