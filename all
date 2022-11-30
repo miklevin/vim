@@ -27,7 +27,7 @@ add_arg = aparser.add_argument
 add_arg("-n", "--number", required=False)
 args = aparser.parse_args()
 number = args.number
-df = pd.read_csv("~/repos/journal/sites.csv", delimiter="|")
+df = pd.read_csv("~/repos/hide/journal/sites.csv", delimiter="|")
 df = df.applymap(lambda x: x.strip())
 df.columns = [x.strip() for x in df.columns]
 if number == None:
@@ -37,7 +37,6 @@ elif number.isnumeric():
     if number > df.shape[0]:
         number = df.shape[0]
     df = df.head(number)
-    print('hit')
 
 
 def flush(std):
