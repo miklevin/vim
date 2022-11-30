@@ -64,7 +64,7 @@ def git(cwd, args):
 
 
 alist = df[['path']].values.tolist()
-journals = " ".join([f'~/{x[0]}/journal.md' for x in alist])
+journals = " ".join([f'~/{x[0]}/hide/journal.md' for x in alist])
 
 fig("Pulling Repos")
 
@@ -74,8 +74,8 @@ git(loc, "pull")
 
 for item in alist:
     repo = item[0]
-    fig(repo[6:])
-    loc = f"/home/{username}/{repo}"
+    fig(repo)
+    loc = f"/home/{username}/repos/hide/{repo}"
     git(loc, 'pull')
     print()
 
@@ -98,8 +98,8 @@ print()
 
 for item in alist:
     repo = item[0]
-    fig(repo[6:])
-    loc = f"/home/{username}/{repo}"
+    fig(repo)
+    loc = f"/home/{username}/repos/hide/{repo}"
     git(loc, f'commit -am "Pushing {repo} to Github..."')
     git(loc, "push")
     print()
