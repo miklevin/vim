@@ -82,6 +82,7 @@ for item in alist:
 edit_journals = f"vim {journals} ~/.vimrc"
 system(edit_journals)
 
+shutil.copyfile(f"/home/{username}/.vimrc", f"/home/{username}/repos/vim/.vimrc")
 shutil.copyfile(f"/home/{username}/.screenrc", f"/home/{username}/repos/vim/.screenrc")
 shutil.copyfile(f"/home/{username}/.gitconfig", f"/home/{username}/repos/vim/.gitconfig")
 shutil.copyfile(f"/home/{username}/.bash_prompt", f"/home/{username}/repos/vim/.bash_prompt")
