@@ -87,6 +87,10 @@ shutil.copyfile(f"/home/{username}/.gitconfig", f"/home/{username}/repos/vim/.gi
 shutil.copyfile(f"/home/{username}/.bash_prompt", f"/home/{username}/repos/vim/.bash_prompt")
 shutil.copyfile(f"/home/{username}/.bash_profile", f"/home/{username}/repos/vim/.bash_profile")
 shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
+try:
+    shutil.copyfile(f"/home/{username}/.vimrc", f"/mnt/c/Users/mikle/.vimrc")
+except:
+    pass
 
 fig("Pushing Repos")
 
