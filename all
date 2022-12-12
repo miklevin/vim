@@ -79,7 +79,7 @@ for item in alist:
     git(loc, 'pull')
     print()
 
-edit_journals = f"vim {journals} ~/.vimrc"
+edit_journals = f"vim {journals} ~/.vimrc ~/repos/hide/MikeLev.in/index.md"
 system(edit_journals)
 
 shutil.copyfile(f"/home/{username}/.screenrc", f"/home/{username}/repos/vim/.screenrc")
