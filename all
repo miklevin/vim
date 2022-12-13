@@ -100,7 +100,13 @@ fig("Pushing Repos")
 
 fig("vim")
 loc = f"/home/{username}/repos/vim"
-git(loc, 'commit -am "Pushing vim to Github..."')
+git(loc, 'commit -am "pushing vim to github..."')
+git(loc, "push")
+print()
+ 
+fig("skite")
+loc = f"/home/{username}/repos/skite"
+git(loc, 'commit -am "pushing skite to github..."')
 git(loc, "push")
 print()
 
