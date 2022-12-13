@@ -83,7 +83,7 @@ pre = "~/repos/hide/MikeLev.in/"
 edit_pages = ['linux', 'python', 'vim', 'git', 'blog', 'index']
 edit_pages = [f"{pre}{x}.md" for x in edit_pages]
 edit_pages = " ".join(edit_pages)
-edit_journals = f"vim {journals} ~/.vimrc {edit_pages}"
+edit_journals = f"vim {journals} ~/repos/skite/skite.py ~/repos/skite/slice.py ~/.vimrc {edit_pages}"
 system(edit_journals)
 
 shutil.copyfile(f"/home/{username}/.screenrc", f"/home/{username}/repos/vim/.screenrc")
