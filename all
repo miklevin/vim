@@ -19,6 +19,12 @@ list_of_journals = f"/home/{username}/repos/hide/journal/sites.csv"
 path_to_journals = f"/home/{username}/repos/hide/"
 edit_first_n_journals = 4
 
+locs = f"""
+/home/{username}/repos/vim
+/home/{username}/repos/skite
+/home/{username}/repos/hide/Pipulate.com
+""".split("\n")[1:-1]
+
 # Use big pretty ascii art to keep user informed
 fig = lambda x: print(text2art(x))
 fig("Editing Journals")
@@ -70,9 +76,8 @@ journals = " ".join([f'{path_to_journals}{x[0]}/journal.md' for x in alist])
 
 fig("Pulling Repos")
 
-fig("vim")
-loc = f"/home/{username}/repos/vim"
-git(loc, "pull")
+for loc in locsL
+    git(loc, "pull")
 
 for item in alist:
     repo = item[0]
@@ -85,9 +90,15 @@ for item in alist:
 pre = f"{path_to_journals}MikeLev.in/" 
 edit_pages = ['linux', 'python', 'vim', 'git', 'seo', 'blog', 'index']
 edit_pages = [f"{pre}{x}.md" for x in edit_pages]
-edit_pages.append(f"{path_to_journals}Pipulate.com/index.md")
 
-edit_journals = f"vim {journals} ~/repos/skite/skite.py ~/repos/skite/slice.py ~/.vimrc {edit_pages}"
+misc_files = """~/repos/skite/skite.py
+~/repos/skite/slice.py
+~/.vimrc
+~/repos/hide/Pipulate.com/index.md
+""".split("\n")
+misc_files = " ".join(misc_files)
+
+edit_journals = f"vim {journals} {misc_files} {edit_pages}"
 system(edit_journals)
 
 for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']:
@@ -101,18 +112,12 @@ except:
 
 fig("Pushing Repos")
 
-fig("vim")
-loc = f"/home/{username}/repos/vim"
-git(loc, 'commit -am "pushing vim to github..."')
-git(loc, "push")
-print()
+for loc in locs:
+    print(loc)
+    git(loc, 'commit -am "pushing vim to github..."')
+    git(loc, "push")
+    print()
  
-fig("skite")
-loc = f"/home/{username}/repos/skite"
-git(loc, 'commit -am "pushing skite to github..."')
-git(loc, "push")
-print()
-
 for item in alist:
     repo = item[0]
     fig(repo)
