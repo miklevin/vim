@@ -12,7 +12,9 @@ from pwd import getpwuid
 from subprocess import Popen, PIPE
 
 # Set Default Number of Files to Edit
-default_number = 4
+list_of_journals = "~/repos/hide/journal/sites.csv"
+path_to_journals = "~/repos/hide/"
+edit_first_n_journals = 4
 
 # Get Linux Username for portability between systems
 username = getpwuid(getuid())[0]
@@ -27,11 +29,11 @@ add_arg = aparser.add_argument
 add_arg("-n", "--number", required=False)
 args = aparser.parse_args()
 number = args.number
-df = pd.read_csv("~/repos/hide/journal/sites.csv", delimiter="|")
+df = pd.read_csv(list_of_journals, delimiter="|")
 df = df.applymap(lambda x: x.strip())
 df.columns = [x.strip() for x in df.columns]
 if number == None:
-    df = df.head(default_number)
+    df = df.head(edit_first_n_journals)
 elif number.isnumeric():
     number = int(number)
     if number > df.shape[0]:
@@ -64,7 +66,7 @@ def git(cwd, args):
 
 
 alist = df[['path']].values.tolist()
-journals = " ".join([f'~/repos/hide/{x[0]}/journal.md' for x in alist])
+journals = " ".join([f'{path_to_journals}{x[0]}/journal.md' for x in alist])
 
 fig("Pulling Repos")
 
@@ -75,21 +77,22 @@ git(loc, "pull")
 for item in alist:
     repo = item[0]
     fig(repo)
-    loc = f"/home/{username}/repos/hide/{repo}"
+    loc = f"{path_to_journals}{repo}"
     git(loc, 'pull')
     print()
 
-pre = "~/repos/hide/MikeLev.in/" 
+# Add the pages from MikeLev.in that I want to edit
+pre = f"{path_to_journals}MikeLev.in/" 
 edit_pages = ['linux', 'python', 'vim', 'git', 'seo', 'blog', 'index']
 edit_pages = [f"{pre}{x}.md" for x in edit_pages]
-edit_pages = " ".join(edit_pages)
+edit_pages.append(f"{path_to_journals}Pipulate.com/index.md")
+
 edit_journals = f"vim {journals} ~/repos/skite/skite.py ~/repos/skite/slice.py ~/.vimrc {edit_pages}"
 system(edit_journals)
 
-shutil.copyfile(f"/home/{username}/.screenrc", f"/home/{username}/repos/vim/.screenrc")
-shutil.copyfile(f"/home/{username}/.gitconfig", f"/home/{username}/repos/vim/.gitconfig")
-shutil.copyfile(f"/home/{username}/.bash_prompt", f"/home/{username}/repos/vim/.bash_prompt")
-shutil.copyfile(f"/home/{username}/.bash_profile", f"/home/{username}/repos/vim/.bash_profile")
+for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']
+    shutil.copyfile(f"/home/{username}/{dotconfig}", f"/home/{username}/repos/vim/{dotconfig}")
+
 shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
 try:
     shutil.copyfile(f"/home/{username}/.vimrc", f"/mnt/c/Users/mikle/.vimrc")
@@ -113,7 +116,7 @@ print()
 for item in alist:
     repo = item[0]
     fig(repo)
-    loc = f"/home/{username}/repos/hide/{repo}"
+    loc = f"{path_to_journals}{repo}"
     git(loc, f'commit -am "Pushing {repo} to Github..."')
     git(loc, "push")
     print()
