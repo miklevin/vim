@@ -11,13 +11,13 @@ from art import text2art
 from pwd import getpwuid
 from subprocess import Popen, PIPE
 
-# Set Default Number of Files to Edit
-list_of_journals = "~/repos/hide/journal/sites.csv"
-path_to_journals = "~/repos/hide/"
-edit_first_n_journals = 4
-
 # Get Linux Username for portability between systems
 username = getpwuid(getuid())[0]
+
+# Set Default Number of Files to Edit
+list_of_journals = f"/home/{username}/repos/hide/journal/sites.csv"
+path_to_journals = f"/home/{username}/repos/hide/"
+edit_first_n_journals = 4
 
 # Use big pretty ascii art to keep user informed
 fig = lambda x: print(text2art(x))
@@ -90,7 +90,7 @@ edit_pages.append(f"{path_to_journals}Pipulate.com/index.md")
 edit_journals = f"vim {journals} ~/repos/skite/skite.py ~/repos/skite/slice.py ~/.vimrc {edit_pages}"
 system(edit_journals)
 
-for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']
+for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']:
     shutil.copyfile(f"/home/{username}/{dotconfig}", f"/home/{username}/repos/vim/{dotconfig}")
 
 shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
