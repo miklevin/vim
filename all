@@ -76,7 +76,7 @@ journals = " ".join([f'{path_to_journals}{x[0]}/journal.md' for x in alist])
 
 fig("Pulling Repos")
 
-for loc in locsL
+for loc in locs:
     git(loc, "pull")
 
 for item in alist:
