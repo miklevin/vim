@@ -77,6 +77,7 @@ journals = " ".join([f'{path_to_journals}{x[0]}/journal.md' for x in alist])
 fig("Pulling Repos")
 
 for loc in locs:
+    fig(loc.split("/")[-1])
     git(loc, "pull")
 
 for item in alist:
@@ -90,6 +91,7 @@ for item in alist:
 pre = f"{path_to_journals}MikeLev.in/" 
 edit_pages = ['linux', 'python', 'vim', 'git', 'seo', 'blog', 'index']
 edit_pages = [f"{pre}{x}.md" for x in edit_pages]
+edit_pages = " ".join(edit_pages)
 
 misc_files = """~/repos/skite/skite.py
 ~/repos/skite/slice.py
@@ -99,6 +101,8 @@ misc_files = """~/repos/skite/skite.py
 misc_files = " ".join(misc_files)
 
 edit_journals = f"vim {journals} {misc_files} {edit_pages}"
+# print(edit_journals)
+
 system(edit_journals)
 
 for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']:
