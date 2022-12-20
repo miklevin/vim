@@ -96,7 +96,7 @@ edit_pages = " ".join(edit_pages)
 misc_files = """~/repos/skite/skite.py
 ~/repos/skite/slice.py
 ~/.vimrc
-~/repos/hide/Pipulate.com/index.md
+~/repos/hide/Pipulate.com/pipulate.md
 """.split("\n")
 misc_files = " ".join(misc_files)
 
