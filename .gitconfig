@@ -1,6 +1,10 @@
 [user]
 	email = miklevin@gmail.com
 	name = Mike Levin
-[core]
-	autocrlf = false
-	filemode = false
+[safe]
+	directory = /home/healus/repos/MikeLev.in
+	directory = /home/healus/repos/dotconfigs
+	directory = /home/healus/repos/vim
+	directory = /home/healus/repos/vim
+	directory = /home/healus/repos/journal
+	directory = /home/healus/repos/wsl2lxd
