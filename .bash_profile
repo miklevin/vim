@@ -7,6 +7,8 @@ source ~/.bash_prompt
 # Make gnu screen show more useful information.
 export SCREENDIR=$HOME/.screen
 
+export OPENAI_API_KEY="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"
+
 # Enable WSL Graphics & Auido (redundant)
 export WSL2_GUI_APPS_ENABLED=1
 export DISPLAY=:0
