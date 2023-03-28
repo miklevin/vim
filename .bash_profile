@@ -16,6 +16,8 @@ export XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
 export WAYLAND_DISPLAY=wayland-0
 export PULSE_SERVER=/mnt/wslg/pulseserver
 
+alias vim='nvim'
+
 cd ~/repos
 
 echo "Visit http://localhost:8888 for JupyterLab, or to see where it's running, type: screen -ls"
