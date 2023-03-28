@@ -107,7 +107,7 @@ misc_files = """~/repos/skite/skite.py
 """.split("\n")
 misc_files = " ".join(misc_files)
 
-edit_journals = f"vim {journals} {misc_files} {edit_pages}"
+edit_journals = f"nvim {journals} {misc_files} {edit_pages}"
 # print(edit_journals)
 
 system(edit_journals)
