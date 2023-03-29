@@ -33,7 +33,7 @@ locs = f"""
 
 # Use big pretty ascii art to keep user informed
 fig = lambda x: print(text2art(x))
-fig("Editing Journals")
+fig("Loading")
 
 # Determine how many journals to edit at once
 aparser = argparse.ArgumentParser()
