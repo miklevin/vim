@@ -19,11 +19,10 @@ try:
 except:
     ...
 
-
 # Set Default Number of Files to Edit
 list_of_journals = f"/home/{username}/repos/hide/journal/sites.csv"
 path_to_journals = f"/home/{username}/repos/hide/"
-edit_first_n_journals = 4
+edit_first_n_journals = 3
 
 locs = f"""
 /home/{username}/repos/vim
@@ -99,7 +98,8 @@ edit_pages = ['linux', 'python', 'vim', 'git', 'seo', 'blog', 'index']
 edit_pages = [f"{pre}{x}.md" for x in edit_pages]
 edit_pages = " ".join(edit_pages)
 
-misc_files = """~/repos/skite/skite.py
+misc_files = """~/repos/hide/journal/journal.txt
+~/repos/skite/skite.py
 ~/repos/skite/slice.py
 ~/.vimrc
 ~/repos/hide/Pipulate.com/pipulate.md
