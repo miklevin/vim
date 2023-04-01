@@ -118,7 +118,7 @@ for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']:
 shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
 try:
     # shutil.copyfile(f"/home/{username}/.vimrc", f"/mnt/c/Users/mikle/.vimrc")
-    shutil.copyfile(f"/home/{username}/.config/init.vim", f"/home/{username}/repos/vim/")
+    shutil.copyfile(f"/home/{username}/.config/nvim/init.vim", f"/home/{username}/repos/vim/")
 except:
     pass
 
