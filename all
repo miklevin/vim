@@ -101,6 +101,7 @@ edit_pages = " ".join(edit_pages)
 misc_files = """~/repos/hide/journal/journal.txt
 ~/repos/skite/skite.py
 ~/repos/skite/slice.py
+~/repos/skite/dice.py
 ~/.config/nvim/init.vim
 ~/repos/hide/Pipulate.com/pipulate.md
 ~/repos/hide/Pipulate.com/software.md
