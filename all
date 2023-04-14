@@ -99,9 +99,7 @@ edit_pages = [f"{pre}{x}.md" for x in edit_pages]
 edit_pages = " ".join(edit_pages)
 
 misc_files = """~/repos/hide/journal/journal.txt
-~/repos/skite/skite.py
-~/repos/skite/slice.py
-~/repos/skite/dice.py
+~/repos/skite/chopchop.py
 ~/.config/nvim/init.vim
 ~/repos/hide/Pipulate.com/pipulate.md
 ~/repos/hide/Pipulate.com/software.md
@@ -118,8 +116,8 @@ for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']:
 
 shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
 try:
-    # shutil.copyfile(f"/home/{username}/.vimrc", f"/mnt/c/Users/mikle/.vimrc")
     shutil.copyfile(f"/home/{username}/.config/nvim/init.vim", f"/home/{username}/repos/vim/")
+    shutil.copyfile(f"/home/{username}/.config/nvim/init.vim", f"/home/{username}/.vimrc")
 except:
     pass
 
