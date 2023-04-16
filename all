@@ -11,23 +11,21 @@ from art import text2art
 from pwd import getpwuid
 from subprocess import Popen, PIPE
 
-# Get Linux Username for portability between systems
-username = getpwuid(getuid())[0]
 
-try:
-    Popen('rm /home/{username}/repos/hide/MikeLev.in/.journal.md.swp > nil')
-except:
-    ...
+# Get Linux Username for portability between systems
+USERNAME = getpwuid(getuid())[0]
+REPOS = f"/home/{USERNAME}/repos/"
+
 
 # Set Default Number of Files to Edit
-list_of_journals = f"/home/{username}/repos/hide/journal/sites.csv"
-path_to_journals = f"/home/{username}/repos/hide/"
+list_of_journals = f"{REPOS}hide/journal/sites.csv"
+path_to_journals = f"{REPOS}hide/"
 edit_first_n_journals = 3
 
 locs = f"""
-/home/{username}/repos/vim
-/home/{username}/repos/skite
-/home/{username}/repos/hide/Pipulate.com
+{REPOS}vim
+{REPOS}skite
+{REPOS}hide/Pipulate.com
 """.split("\n")[1:-1]
 
 # Use big pretty ascii art to keep user informed
@@ -98,26 +96,24 @@ edit_pages = ['linux', 'python', 'vim', 'git', 'seo', 'blog', 'index']
 edit_pages = [f"{pre}{x}.md" for x in edit_pages]
 edit_pages = " ".join(edit_pages)
 
-misc_files = """~/repos/hide/journal/journal.txt
-~/repos/skite/chopchop.py
+misc_files = f"""{REPOS}hide/journal/journal.txt
 ~/.config/nvim/init.vim
-~/repos/hide/Pipulate.com/pipulate.md
-~/repos/hide/Pipulate.com/software.md
-""".split("\n")
+{REPOS}skite/chopchop.py
+{REPOS}hide/Pipulate.com/pipulate.md
+{REPOS}hide/Pipulate.com/software.md""".split("\n")
 misc_files = " ".join(misc_files)
 
+# Load everything into nvim
 edit_journals = f"nvim {journals} {misc_files} {edit_pages}"
-# print(edit_journals)
-
 system(edit_journals)
 
 for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']:
-    shutil.copyfile(f"/home/{username}/{dotconfig}", f"/home/{username}/repos/vim/{dotconfig}")
+    shutil.copyfile(f"/home/{USERNAME}/{dotconfig}", f"{REPOS}vim/{dotconfig}")
 
-shutil.copyfile(f"/usr/local/sbin/all", f"/home/{username}/repos/vim/all")
+shutil.copyfile(f"/usr/local/sbin/all", f"{REPOS}vim/all")
 try:
-    shutil.copyfile(f"/home/{username}/.config/nvim/init.vim", f"/home/{username}/repos/vim/")
-    shutil.copyfile(f"/home/{username}/.config/nvim/init.vim", f"/home/{username}/.vimrc")
+    shutil.copyfile(f"/home/{USERNAME}/.config/nvim/init.vim", f"{REPOS}vim/")
+    shutil.copyfile(f"/home/{USERNAME}/.config/nvim/init.vim", f"/home/{USERNAME}/.vimrc")
 except:
     pass
 
