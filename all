@@ -8,7 +8,6 @@
 
 import shlex
 import shutil
-import argparse
 from os import system
 from os import getuid
 from sys import stdout
@@ -28,7 +27,7 @@ HIDE = f"{REPOS}hide/"
 edit_files = [
     f"{HIDE}MikeLev.in/journal.md",
     f"{HIDE}journal/journal.txt",
-    f"~/.config/nvim/init.vim",
+    "~/.config/nvim/init.vim",
     f"{REPOS}skite/chopchop.py",
 ]
 
@@ -96,7 +95,7 @@ def git_pull():
         if REPOS in arepo and arepo not in seen:
             git(arepo, "pull")
             seen.add(arepo)
-        print()
+            print()
 
 
 def load_editor():
@@ -126,34 +125,3 @@ git_pull()
 # load_editor()
 copy_files()
 git_push()
-
-
-raise SystemExit()
-
-for dotconfig in [".screenrc", ".gitconfig", ".bash_prompt", ".bash_profile"]:
-    shutil.copyfile(f"/home/{USERNAME}/{dotconfig}", f"{REPOS}vim/{dotconfig}")
-
-shutil.copyfile(f"/usr/local/sbin/all", f"{REPOS}vim/all")
-try:
-    shutil.copyfile(f"/home/{USERNAME}/.config/nvim/init.vim", f"{REPOS}vim/")
-    shutil.copyfile(
-        f"/home/{USERNAME}/.config/nvim/init.vim", f"/home/{USERNAME}/.vimrc"
-    )
-except:
-    pass
-
-for loc in locs:
-    print(loc)
-    git(loc, 'commit -am "pushing vim to github..."')
-    git(loc, "push")
-    print()
-
-for item in alist:
-    repo = item[0]
-    fig(repo)
-    loc = f"{path_to_journals}{repo}"
-    git(loc, f'commit -am "Pushing {repo} to Github..."')
-    git(loc, "push")
-    print()
-
-fig("Done!")
