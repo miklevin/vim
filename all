@@ -47,7 +47,7 @@ commit_and_push = [
 
 
 # Load function early so we can use it, pronto!
-def fig(text, description=None):
+def fig(text, description=None, font="standard"):
     #  _____ _       _      _
     # |  ___(_) __ _| | ___| |_
     # | |_  | |/ _` | |/ _ \ __|
@@ -55,7 +55,7 @@ def fig(text, description=None):
     # |_|   |_|\__, |_|\___|\__|
     #          |___/
     """Let them see text!"""
-    f = Figlet()
+    f = Figlet(font=font)
     print(f.renderText(text))
     if description:
         print(description)
@@ -93,6 +93,7 @@ def git_pull():
     for afile in edit_files:
         arepo = "/".join(afile.split("/")[:-1])
         if REPOS in arepo and arepo not in seen:
+            fig(f"{arepo.split('/')[-1]}", font="cybermedium")
             print(f"Pulling {arepo} from Github...")
             git(arepo, "pull")
             seen.add(arepo)
