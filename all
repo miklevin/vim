@@ -125,6 +125,6 @@ fig("vim it all...", "Loading data into multiple vim buffers\n")
 
 # Main Control Flow
 git_pull()
-# load_editor()
+load_editor()
 copy_files()
 git_push()
