@@ -42,8 +42,8 @@ copy_to_destination = {
 commit_and_push = [
     f"{REPOS}vim",
     f"{REPOS}skite",
-    f"{REPOS}journal",
-    f"{REPOS}MikeLev.in",
+    f"{HIDE}journal",
+    f"{HIDE}MikeLev.in",
 ]
 
 
