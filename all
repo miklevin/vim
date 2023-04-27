@@ -128,8 +128,8 @@ def reverse_copy():
 fig("vim it all...", "Loading data into multiple vim buffers\n")
 
 # Main Control Flow
-# git_pull()
-# reverse_copy()
-# load_editor()
-# copy_files()
+git_pull()
+reverse_copy()
+load_editor()
+copy_files()
 git_push()
