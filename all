@@ -108,10 +108,7 @@ edit_journals = f"nvim {journals} {misc_files} {edit_pages}"
 system(edit_journals)
 
 for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']:
-    try:
-        shutil.copyfile(f"/home/{USERNAME}/{dotconfig}", f"{REPOS}vim/{dotconfig}")
-    except:
-        pass
+    shutil.copyfile(f"/home/{USERNAME}/{dotconfig}", f"{REPOS}vim/{dotconfig}")
 
 shutil.copyfile(f"/usr/local/sbin/all", f"{REPOS}vim/all")
 try:
