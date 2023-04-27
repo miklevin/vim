@@ -119,14 +119,15 @@ def git_push():
 
 def reverse_copy():
     for destination, source in copy_to_destination.items():
+        print(f"Copying {destination} to {source}")
         shutil.copyfile(destination, source)
 
 
 fig("vim it all...", "Loading data into multiple vim buffers\n")
 
 # Main Control Flow
-git_pull()
+# git_pull()
 reverse_copy()
-load_editor()
-copy_files()
-git_push()
+# load_editor()
+# copy_files()
+# git_push()
