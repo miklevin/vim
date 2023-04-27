@@ -15,7 +15,7 @@ from time import sleep
 from pwd import getpwuid
 from pyfiglet import Figlet
 from subprocess import Popen, PIPE
-
+print("Hit")
 
 # Get Linux Username for portability between systems
 USERNAME = getpwuid(getuid())[0]
@@ -104,6 +104,7 @@ def load_editor():
 
 
 def git_push():
+    print("Hit")
     for repo in git_repos:
         fig(f"{repo.split('/')[-1]}", font="cybermedium")
         print(f"Pushing {repo} to Github...")
@@ -131,4 +132,4 @@ fig("vim it all...", "Loading data into multiple vim buffers\n")
 # reverse_copy()
 # load_editor()
 # copy_files()
-# git_push()
+git_push()
