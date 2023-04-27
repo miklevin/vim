@@ -73,6 +73,12 @@ def flush(std):
 
 
 def git(cwd, line_command):
+    #        _ _ 
+    #   __ _(_) |_   This is it. This is git.
+    #  / _` | | __|  It does the simple deed.
+    # | (_| | | |_   From a shell what it does well
+    #  \__, |_|\__|  Is move things where you need.
+    #  |___/       
     """Run a Linux git command."""
     cmd = [GIT_EXE] + shlex.split(line_command)
     show_cmd = " ".join(cmd)
