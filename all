@@ -89,15 +89,10 @@ def git(cwd, line_command):
 
 
 def git_pull():
-    seen = set()
-    for afile in edit_files:
-        arepo = "/".join(afile.split("/")[:-1])
-        if REPOS in arepo and arepo not in seen:
-            fig(f"{arepo.split('/')[-1]}", font="cybermedium")
-            print(f"Pulling {arepo} from Github...")
-            git(arepo, "pull")
-            seen.add(arepo)
-            print()
+    for arepo in commit_and_push:
+        fig(f"{arepo.split('/')[-1]}", font="cybermedium")
+        git(arepo, "pull")
+        print()
 
 
 def load_editor():
