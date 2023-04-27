@@ -103,11 +103,6 @@ def load_editor():
     system(command)
 
 
-def copy_files():
-    for source, destination in copy_to_destination.items():
-        shutil.copyfile(source, destination)
-
-
 def git_push():
     for repo in git_repos:
         fig(f"{repo.split('/')[-1]}", font="cybermedium")
@@ -117,17 +112,23 @@ def git_push():
         print()
 
 
+def copy_files():
+    for source, destination in copy_to_destination.items():
+        print(f"Copying {source} to {destination}")
+        shutil.copyfile(source, destination)
+
+
 def reverse_copy():
     for destination, source in copy_to_destination.items():
-        print(f"Copying {destination} to {source}")
-        shutil.copyfile(destination, source)
+        print(f"Copying {source} to {destination}")
+        shutil.copyfile(source, destination)
 
 
 fig("vim it all...", "Loading data into multiple vim buffers\n")
 
 # Main Control Flow
 # git_pull()
-reverse_copy()
+# reverse_copy()
 # load_editor()
 # copy_files()
 # git_push()
