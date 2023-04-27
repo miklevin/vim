@@ -89,11 +89,11 @@ def git(cwd, line_command):
 
 
 def git_pull():
-    fig("vim it all...", "Loading data into multiple vim buffers")
     seen = set()
     for afile in edit_files:
         arepo = "/".join(afile.split("/")[:-1])
         if REPOS in arepo and arepo not in seen:
+            print(f"Pulling {arepo} from Github...")
             git(arepo, "pull")
             seen.add(arepo)
             print()
@@ -119,6 +119,8 @@ def git_push():
         git(repo, "push")
         print()
 
+
+fig("vim it all...", "Loading data into multiple vim buffers")
 
 # Main Control Flow
 git_pull()
