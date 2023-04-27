@@ -28,6 +28,7 @@ edit_files = [
     f"{HIDE}MikeLev.in/journal.md",
     f"{HIDE}journal/journal.txt",
     "~/.config/nvim/init.vim",
+    "~/py311/bin/all",
     f"{REPOS}skite/chopchop.py",
 ]
 
