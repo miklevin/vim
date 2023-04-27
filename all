@@ -96,6 +96,7 @@ def git_pull():
         if REPOS in arepo and arepo not in seen:
             git(arepo, "pull")
             seen.add(arepo)
+    print()
 
 
 def load_editor():
@@ -109,13 +110,15 @@ def copy_files():
     print("Copying files...")
     for source, destination in copy_to_destination.items():
         shutil.copyfile(source, destination)
+    print()
 
 
 def git_push():
-    print("Pushing files...")
     for repo in commit_and_push:
-        git(repo, "commit -am 'pushing vim to github...'")
+        print(f"Pushing {repo} to Github...")
+        git(repo, "commit -am 'pushing to github...'")
         git(repo, "push")
+    print()
 
 
 # Main Control Flow
