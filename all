@@ -74,7 +74,7 @@ def flush(std):
 def git(cwd, line_command):
     """Run a Linux git command."""
     cmd = [GIT_EXE] + shlex.split(line_command)
-    print(f"{cmd}")
+    print(f"{line_command}")
     process = Popen(
         args=cmd,
         cwd=cwd,
@@ -106,7 +106,6 @@ def load_editor():
 
 
 def copy_files():
-    print("Copying files...")
     for source, destination in copy_to_destination.items():
         shutil.copyfile(source, destination)
     print()
