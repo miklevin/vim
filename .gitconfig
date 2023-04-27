@@ -1,3 +1,6 @@
 [user]
 	email = miklevin@gmail.com
 	name = Mike Levin
+[core]
+	autocrlf = false
+	filemode = false

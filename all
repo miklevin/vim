@@ -1,56 +1,70 @@
 #! /usr/bin/env python
+#        _             _ _           _ _
+# __   _(_)_ __ ___   (_) |_    __ _| | |
+# \ \ / / | '_ ` _ \  | | __|  / _` | | |
+#  \ V /| | | | | | | | | |_  | (_| | | |
+#   \_/ |_|_| |_| |_| |_|\__|  \__,_|_|_|
+
 
 import shlex
 import shutil
 import argparse
-import pandas as pd
 from os import system
 from os import getuid
 from sys import stdout
-from art import text2art
+from time import sleep
 from pwd import getpwuid
+from pyfiglet import Figlet
 from subprocess import Popen, PIPE
 
 
 # Get Linux Username for portability between systems
 USERNAME = getpwuid(getuid())[0]
+GIT_EXE = "/usr/bin/git"
 REPOS = f"/home/{USERNAME}/repos/"
+HIDE = f"{REPOS}hide/"
+
+# Files to edit
+edit_files = [
+    f"{HIDE}MikeLev.in/journal.md",
+    f"{HIDE}journal/journal.txt",
+    f"~/.config/nvim/init.vim",
+    f"{REPOS}skite/chopchop.py",
+]
+
+# Places to put files after editing
+copy_to_destination = {
+    "/home/ubuntu/py311/bin/all": f"{REPOS}vim/all",
+    "/home/ubuntu/.config/nvim/init.vim": f"{REPOS}vim/init.vim",
+}
+
+# Repos to push after editing
+commit_and_push = [
+    f"{REPOS}vim",
+    f"{REPOS}skite",
+    f"{REPOS}journal",
+    f"{REPOS}MikeLev.in",
+]
 
 
-# Set Default Number of Files to Edit
-list_of_journals = f"{REPOS}hide/journal/sites.csv"
-path_to_journals = f"{REPOS}hide/"
-edit_first_n_journals = 3
-
-locs = f"""
-{REPOS}vim
-{REPOS}skite
-{REPOS}hide/Pipulate.com
-""".split("\n")[1:-1]
-
-# Use big pretty ascii art to keep user informed
-fig = lambda x: print(text2art(x))
-fig("Loading")
-
-# Determine how many journals to edit at once
-aparser = argparse.ArgumentParser()
-add_arg = aparser.add_argument
-add_arg("-n", "--number", required=False)
-args = aparser.parse_args()
-number = args.number
-df = pd.read_csv(list_of_journals, delimiter="|")
-df = df.applymap(lambda x: x.strip())
-df.columns = [x.strip() for x in df.columns]
-if number == None:
-    df = df.head(edit_first_n_journals)
-elif number.isnumeric():
-    number = int(number)
-    if number > df.shape[0]:
-        number = df.shape[0]
-    df = df.head(number)
+# Load function early so we can use it, pronto!
+def fig(text, description=None):
+    #  _____ _       _      _
+    # |  ___(_) __ _| | ___| |_
+    # | |_  | |/ _` | |/ _ \ __|
+    # |  _| | | (_| | |  __/ |_
+    # |_|   |_|\__, |_|\___|\__|
+    #          |___/
+    """Let them see text!"""
+    f = Figlet()
+    print(f.renderText(text))
+    if description:
+        print(description)
+    sleep(0.5)
 
 
 def flush(std):
+    """Flush a stream."""
     for line in std:
         line = line.strip()
         if line:
@@ -58,9 +72,10 @@ def flush(std):
             stdout.flush()
 
 
-def git(cwd, args):
-    cmd = ["/usr/bin/git"] + shlex.split(args)
-    print(f"COMMAND: << {shlex.join(cmd)} >>")
+def git(cwd, line_command):
+    """Run a Linux git command."""
+    cmd = [GIT_EXE] + shlex.split(line_command)
+    print(f"{cmd}")
     process = Popen(
         args=cmd,
         cwd=cwd,
@@ -71,63 +86,65 @@ def git(cwd, args):
         universal_newlines=True,
     )
     flush(process.stdout)
-    flush(process.stderr)
 
 
-alist = df[['path']].values.tolist()
-journals = " ".join([f'{path_to_journals}{x[0]}/journal.md' for x in alist])
+def git_pull():
+    fig("vim it all...", "Loading data into multiple vim buffers")
+    seen = set()
+    for afile in edit_files:
+        arepo = "/".join(afile.split("/")[:-1])
+        if REPOS in arepo and arepo not in seen:
+            git(arepo, "pull")
+            seen.add(arepo)
 
-fig("Pulling Repos")
 
-for loc in locs:
-    fig(loc.split("/")[-1])
-    git(loc, "pull")
+def load_editor():
+    print("Loading editor...")
+    files = " ".join(edit_files)
+    command = f"nvim {files}"
+    system(command)
 
-for item in alist:
-    repo = item[0]
-    fig(repo)
-    loc = f"{path_to_journals}{repo}"
-    git(loc, 'pull')
-    print()
 
-# Add the pages from MikeLev.in that I want to edit
-pre = f"{path_to_journals}MikeLev.in/" 
-edit_pages = ['linux', 'python', 'vim', 'git', 'seo', 'blog', 'index']
-edit_pages = [f"{pre}{x}.md" for x in edit_pages]
-edit_pages = " ".join(edit_pages)
+def copy_files():
+    print("Copying files...")
+    for source, destination in copy_to_destination.items():
+        shutil.copyfile(source, destination)
 
-misc_files = f"""{REPOS}hide/journal/journal.txt
-~/.config/nvim/init.vim
-{REPOS}skite/chopchop.py
-{REPOS}hide/Pipulate.com/pipulate.md
-{REPOS}hide/Pipulate.com/software.md""".split("\n")
-misc_files = " ".join(misc_files)
 
-# Load everything into nvim
-edit_journals = f"nvim {journals} {misc_files} {edit_pages}"
-system(edit_journals)
+def git_push():
+    print("Pushing files...")
+    for repo in commit_and_push:
+        git(repo, "commit -am 'pushing vim to github...'")
+        git(repo, "push")
 
-for dotconfig in ['.screenrc', '.gitconfig', '.bash_prompt', '.bash_profile']:
-    try:
-        shutil.copyfile(f"/home/{USERNAME}/{dotconfig}", f"{REPOS}vim/{dotconfig}")
-    except:
-        pass
+
+# Main Control Flow
+git_pull()
+# load_editor()
+copy_files()
+git_push()
+
+
+raise SystemExit()
+
+for dotconfig in [".screenrc", ".gitconfig", ".bash_prompt", ".bash_profile"]:
+    shutil.copyfile(f"/home/{USERNAME}/{dotconfig}", f"{REPOS}vim/{dotconfig}")
 
 shutil.copyfile(f"/usr/local/sbin/all", f"{REPOS}vim/all")
 try:
     shutil.copyfile(f"/home/{USERNAME}/.config/nvim/init.vim", f"{REPOS}vim/")
-    shutil.copyfile(f"/home/{USERNAME}/.config/nvim/init.vim", f"/home/{USERNAME}/.vimrc")
+    shutil.copyfile(
+        f"/home/{USERNAME}/.config/nvim/init.vim", f"/home/{USERNAME}/.vimrc"
+    )
 except:
     pass
-
-fig("Pushing Repos")
 
 for loc in locs:
     print(loc)
     git(loc, 'commit -am "pushing vim to github..."')
     git(loc, "push")
     print()
- 
+
 for item in alist:
     repo = item[0]
     fig(repo)
