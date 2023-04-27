@@ -74,7 +74,8 @@ def flush(std):
 def git(cwd, line_command):
     """Run a Linux git command."""
     cmd = [GIT_EXE] + shlex.split(line_command)
-    print(f"{line_command}")
+    show_cmd = " ".join(cmd)
+    print(f"Running: {show_cmd}")
     process = Popen(
         args=cmd,
         cwd=cwd,
