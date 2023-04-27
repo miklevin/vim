@@ -1,7 +1,7 @@
 "  _       _ _         _           
 " (_)_ __ (_) |___   _(_)_ __ ___  
 " | | '_ \| | __\ \ / / | '_ ` _ \ 
-" | | | | | | |_ \ V /| | | | | | | test 2
+" | | | | | | |_ \ V /| | | | | | | Test 3
 " |_|_| |_|_|\__(_)_/ |_|_| |_| |_|
 " What was once .vimrc is now init.vim.                                 
 " It's time to fix my macros. And update Slice & Dice.
@@ -67,8 +67,9 @@ let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ 
 
 "release currently edited blog.
 "Needs to be switched to :terminal NeoVim method for interactivity.
-let @p = ":execute '!python ~/repos/skite/chopchop.py -f ' . expand('%:p')"
-"let @p = ":terminal 'python ~/repos/skite/chopchop.py -f ' .expand('%:p')"
+" let @p = ":execute '!python ~/repos/skite/chopchop.py -f ' . expand('%:p')"
+let @p = ":terminal python ~/repos/skite/chopchop.py -f " . expand('%:p')
+
 
 "Make new journal entry.
 "THIS IS IT! The key to YAMLesque blogging (Reverse chronology and YAML headers).
@@ -86,15 +87,24 @@ let @s = '[s1z=e'
 "Not perfected. Often leaves stuff that has to be hand-coded out.
 let @y = '0V:s/https:\/\/.*\///gcc0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
 
+" An old vim trick of disabling arrow-keys to h,j,k,l-ify you.
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-noremap <F2>  <CR>
-noremap <F3> :set relativenumber! <CR> :set number! <CR>
-noremap <F5> :set wrap! <CR>
-noremap <F4> :source ~/.config/nvim/init.vim <CR>
+
+" Step forward through buffers, then go around again!
 nnoremap <C-SPACE> :bn<CR>
+
+" These are the F-keys of your modes.
+noremap <F2> :set spell! <CR>
+noremap <F3> :set relativenumber! <CR> :set number! <CR>
+noremap <F4> :source ~/.config/nvim/init.vim <CR>
+noremap <F5> :set wrap! <CR>
+noremap <F6> :Copilot disable <CR>
+noremap <F7> :Copilot enable <CR>
+
+" Is Copilot on?
 
 let g:copilot_enable_for_filetypes = ['markdown']
 let g:copilot_disable_for_filetypes = ['text']
