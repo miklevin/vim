@@ -96,7 +96,7 @@ def git_pull():
         if REPOS in arepo and arepo not in seen:
             git(arepo, "pull")
             seen.add(arepo)
-    print()
+        print()
 
 
 def load_editor():
@@ -118,7 +118,7 @@ def git_push():
         print(f"Pushing {repo} to Github...")
         git(repo, "commit -am 'pushing to github...'")
         git(repo, "push")
-    print()
+        print()
 
 
 # Main Control Flow
