@@ -114,6 +114,7 @@ def copy_files():
 
 def git_push():
     for repo in commit_and_push:
+        fig(f"{repo.split('/')[-1]}", font="cybermedium")
         print(f"Pushing {repo} to Github...")
         git(repo, "commit -am 'pushing to github...'")
         git(repo, "push")
