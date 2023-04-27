@@ -109,7 +109,6 @@ def load_editor():
 def copy_files():
     for source, destination in copy_to_destination.items():
         shutil.copyfile(source, destination)
-    print()
 
 
 def git_push():
@@ -120,7 +119,7 @@ def git_push():
         print()
 
 
-fig("vim it all...", "Loading data into multiple vim buffers")
+fig("vim it all...", "Loading data into multiple vim buffers\n")
 
 # Main Control Flow
 git_pull()
