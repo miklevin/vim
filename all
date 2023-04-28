@@ -26,10 +26,10 @@ HIDE = f"{REPOS}hide/"
 # Files to edit
 edit_files = [
     f"{HIDE}MikeLev.in/journal.md",
-    f"{HIDE}journal/journal.txt",
     "~/.config/nvim/init.vim",
-    "~/py311/bin/all",
     f"{REPOS}skite/chopchop.py",
+    f"{HIDE}journal/journal.txt",
+    "~/py311/bin/all",
 ]
 
 # Places to put files after editing
