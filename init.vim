@@ -67,8 +67,8 @@ let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ 
 
 "release currently edited blog.
 "Needs to be switched to :terminal NeoVim method for interactivity.
-"let @p = ":execute '!python ~/repos/skite/chopchop.py -f ' . expand('%:p')"
-let @p = ":terminal python ~/repos/skite/chopchop.py -f " . expand('%:p')
+"let @p = ":execute '!python ~/repos/yamlchop/chop.py -f ' . expand('%:p')"
+let @p = ":terminal python ~/repos/yamlchop/chop.py -f " . expand('%:p')
 
 "Make new journal entry.
 "THIS IS IT! The key to YAMLesque blogging (Reverse chronology and YAML headers).
