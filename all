@@ -27,7 +27,7 @@ HIDE = f"{REPOS}hide/"
 edit_files = [
     f"{HIDE}MikeLev.in/journal.md",
     "~/.config/nvim/init.vim",
-    f"{REPOS}skite/chopchop.py",
+    f"{REPOS}yamlchop/chop.py",
     f"{HIDE}journal/journal.txt",
     "~/py311/bin/all",
 ]
@@ -41,7 +41,7 @@ copy_to_destination = {
 # Repos to push after editing
 git_repos = [
     f"{REPOS}vim",
-    f"{REPOS}skite",
+    f"{REPOS}yamlchop",
     f"{HIDE}journal",
     f"{HIDE}MikeLev.in",
 ]
