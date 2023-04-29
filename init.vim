@@ -90,10 +90,12 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-noremap <F2>  <CR>
+noremap <F2> :set spell!<CR>
 noremap <F3> :set relativenumber! <CR> :set number! <CR>
 noremap <F5> :set wrap! <CR>
 noremap <F4> :source ~/.config/nvim/init.vim <CR>
+noremap <F6> :Copilot disable <CR>
+noremap <F7> :Copilot enable <CR>
 nnoremap <C-SPACE> :bn<CR>
 
 let g:copilot_enable_for_filetypes = ['markdown']
