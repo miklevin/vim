@@ -3,7 +3,7 @@
 # __   _(_)_ __ ___   (_) |_    __ _| | |   Why edit 1 file when you can
 # \ \ / / | '_ ` _ \  | | __|  / _` | | |   edit everything all at once?
 #  \ V /| | | | | | | | | |_  | (_| | | |   Why mess with tabs when you can
-#   \_/ |_|_| |_| |_| |_|\__|  \__,_|_|_|   :bn into buffers? Test 6.
+#   \_/ |_|_| |_| |_| |_|\__|  \__,_|_|_|   :bn into buffers?
 
 
 import shlex
