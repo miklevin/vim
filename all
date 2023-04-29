@@ -26,8 +26,8 @@ HIDE = f"{REPOS}hide/"
 # Files to edit
 edit_files = [
     f"{HIDE}MikeLev.in/_drafts/journal.md",
-    "~/.config/nvim/init.vim",
     f"{REPOS}yamlchop/chop.py",
+    "~/.config/nvim/init.vim",
     f"{HIDE}journal/journal.txt",
     "~/py311/bin/all",
 ]
