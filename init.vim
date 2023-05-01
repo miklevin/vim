@@ -6,16 +6,18 @@
 " What was once .vimrc is now init.vim.                                 
 " It's time to fix my macros. And update Slice & Dice.
 
-
 syntax on
 syntax enable
+
+" Stuff that happens whenever file accessed or buffer is entered.
 autocmd BufEnter * :syntax sync fromstart
 autocmd BufRead,BufNewFile *.md set syntax=on spell tw=79
 
-"Change cursor shape in different modes.
+"Change cursor shape in different modes. NeoVim does by default.
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+" Just a whole bunch of preferences for defaults.
 set formatoptions+=t
 set tabstop=2
 set shiftwidth=2
@@ -40,12 +42,11 @@ set t_Co=256
 set wildmenu
 set winheight=15
 
+" Various color preferences
 hi SpellBad ctermbg=008
 hi LineNr ctermfg=grey
 hi Visual ctermbg=green
 hi Visual ctermfg=black
-hi Cursor ctermbg=green
-hi Cursor ctermfg=black
 
 "  __  __                          
 " |  \/  | __ _  ___ _ __ ___  ___ 
@@ -86,17 +87,23 @@ let @s = '[s1z=e'
 "Not perfected. Often leaves stuff that has to be hand-coded out.
 let @y = '0V:s/https:\/\/.*\///gcc0v$hdi{% include youtubePlayer.html id="pa" %}€ýa'
 
+" Turns off arrow keys in command mode (form good habits)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Map the function keys to anything you like in vim!
 noremap <F2> :set spell!<CR>
 noremap <F3> :set relativenumber! <CR> :set number! <CR>
-noremap <F5> :set wrap! <CR>
 noremap <F4> :source ~/.config/nvim/init.vim <CR>
+noremap <F5> :set wrap! <CR>
 noremap <F6> :Copilot disable <CR>
 noremap <F7> :Copilot enable <CR>
+
+" Rapidly scroll through your vim buffers & return to the first one.
 nnoremap <C-SPACE> :bn<CR>
+nnoremap <C-S> :b1<CR> :source ~/.config/nvim/init.vim <CR>
 
 let g:copilot_enable_for_filetypes = ['markdown']
 let g:copilot_disable_for_filetypes = ['text']
