@@ -43,7 +43,7 @@ git_repos = [
     f"{REPOS}vim",
     f"{REPOS}yamlchop",
     f"{HIDE}journal",
-    f"{HIDE}MikeLev.in",
+    f"{REPOS}MikeLev.in",
 ]
 
 
