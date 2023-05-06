@@ -20,6 +20,7 @@ print("Hit")
 # Get Linux Username for portability between systems
 USERNAME = getpwuid(getuid())[0]
 GIT_EXE = "/usr/bin/git"
+CD_TO = f"{REPOS}MikeLev.in/"
 REPOS = f"/home/{USERNAME}/repos/"
 HIDE = f"{REPOS}hide/"
 
@@ -105,7 +106,7 @@ def git_pull():
 def load_editor():
     print("Loading editor...")
     files = " ".join(edit_files)
-    command = f"nvim {files}"
+    command = f"cd {CD_TO}; nvim {files}"
     system(command)
 
 
