@@ -20,8 +20,8 @@ print("Hit")
 # Get Linux Username for portability between systems
 USERNAME = getpwuid(getuid())[0]
 GIT_EXE = "/usr/bin/git"
-CD_TO = f"{REPOS}MikeLev.in/"
 REPOS = f"/home/{USERNAME}/repos/"
+CD_TO = f"{REPOS}MikeLev.in/"
 HIDE = f"{REPOS}hide/"
 
 # Files to edit
