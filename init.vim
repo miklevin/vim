@@ -8,6 +8,7 @@
 
 call plug#begin()
 Plug 'jbyuki/venn.nvim'
+call plug#end()
 
 syntax on
 syntax enable
