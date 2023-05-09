@@ -1,10 +1,13 @@
 "  _       _ _         _           
 " (_)_ __ (_) |___   _(_)_ __ ___  
 " | | '_ \| | __\ \ / / | '_ ` _ \ 
-" | | | | | | |_ \ V /| | | | | | | test 6
+" | | | | | | |_ \ V /| | | | | | |
 " |_|_| |_|_|\__(_)_/ |_|_| |_| |_|
 " What was once .vimrc is now init.vim.                                 
 " It's time to fix my macros. And update Slice & Dice.
+
+call plug#begin()
+Plug 'jbyuki/venn.nvim'
 
 syntax on
 syntax enable
