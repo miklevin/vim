@@ -129,7 +129,6 @@ def copy_files():
 def reverse_copy():
     for destination, source in copy_to_destination.items():
         print(f"Copying {source} to {destination}")
-        # Chop off the last part of the path
         destination = "/".join(destination.split("/")[:-1])
         shutil.copy(source, destination)
 
