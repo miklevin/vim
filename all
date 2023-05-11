@@ -30,12 +30,12 @@ edit_files = [
     f"{REPOS}yamlchop/chop.py",
     "~/.config/nvim/init.vim",
     f"{HIDE}journal/journal.txt",
-    "~/py311/bin/all",
+    "~/pyenv/bin/all",
 ]
 
 # Places to put files after editing
 copy_to_destination = {
-    "/home/ubuntu/py311/bin/all": f"{REPOS}vim/all",
+    "/home/ubuntu/pyenv/bin/all": f"{REPOS}vim/all",
     "/home/ubuntu/.config/nvim/init.vim": f"{REPOS}vim/init.vim",
 }
 
