@@ -26,10 +26,11 @@ HIDE = f"{REPOS}hide/"
 
 # Files to edit
 edit_files = [
-    f"{REPOS}MikeLev.in/_drafts/journal.md",
+    f"{REPOS}blog/_drafts/journal.md",
     f"{REPOS}yamlchop/chop.py",
     "~/.config/nvim/init.vim",
-    f"{HIDE}journal/journal.txt",
+    f"{REPOS}journal/journal.txt",
+    f"{REPOS}ftloa/journal.md",
     "~/pyenv/bin/all",
 ]
 
@@ -43,8 +44,9 @@ copy_to_destination = {
 git_repos = [
     f"{REPOS}vim",
     f"{REPOS}yamlchop",
-    f"{HIDE}journal",
-    f"{REPOS}MikeLev.in",
+    f"{REPOS}ftloa",
+    f"{REPOS}journal",
+    f"{REPOS}blog",
 ]
 
 
