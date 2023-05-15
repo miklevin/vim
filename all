@@ -25,67 +25,61 @@ opening_message = """
  \____|_| |_|\___/| .__/    |_| |_| |_|\___|   |_/_/   \_\_|  |_|_____(_)
                   |_|                                                    
 
-    On how many "fronts" do you life life? Personal, professional, etc.
+- On how many "fronts" do you life life? Personal, professional, etc.
+- To change the files that are edited, edit ~/pyenv/bin/all
+- You must then also copy that into the vim repo: ~/repos/vim/all
+- Commit and push the vim repo before running `all` again.
+
+                    > I'm building better blogging  
+                    > To replace a bygone era  
+                    > Where your CMS is flogging  
+                    > You to take up something clearer,  
+                    > So you catalog your cat tails  
+                    > In one file for the hashing  
+                    > Using YAML for the data  
+                    > And then Jekyll for the lashing.  
+
     How many blocks must writer walk into before they CHOP THE YAML!!!
 
-                        ┌────────┐
-                        │YAML    │      ┌──────┐
-                        │---     │      │      │
-                        │Markdown│─────►│ HTML │
-                        │        │      │      │
-                        │        │      └──────┘
-                        │--------│ 
-                        │YAML    │      ┌──────┐  
-                        │---     │      │      │  
-                        │Markdown│─────►│ HTML │  
-                        │        │      │      │ 
-                        │        │      └──────┘ 
-                        │--------│
-                        │YAML    │      ┌──────┐ 
-                        │---     │      │      │ 
-                        │Markdown│─────►│ HTML │ 
-                        │        │      │      │ 
-                        │        │      └──────┘ 
-                        │--------│
-                        │YAML    │      ┌──────┐ 
-                        │---     │      │      │ 
-                        │Markdown│─────►│ HTML │ 
-                        │        │      │      │ 
-                        │        │      └──────┘ 
-                        │--------│
-                        │YAML    │      ┌──────┐ 
-                        │---     │      │      │ 
-                        │Markdown│─────►│ HTML │ 
-                        │        │      │      │ 
-                        │        │      └──────┘ 
-                        │--------│
-                        │YAML    │      ┌──────┐ 
-                        │---     │      │      │ 
-                        │Markdown│─────►│ HTML │ 
-                        │        │      │      │ 
-                        │        │      └──────┘ 
-                        └────────┘
-
-To change the files that are edited, edit ~/pyenv/bin/all
-You must then also copy that into the vim repo: ~/repos/vim/all
-Commit and push the vim repo before running `all` again.
-
-> I'm building better blogging  
-> To replace a bygone era  
-> Where your CMS is flogging  
-> You to take up something clearer,  
-> So you catalog your cat tails  
-> In one file for the hashing  
-> Using YAML for the data  
-> And then Jekyll for the lashing.  
-
-
-
-
-
-
+                       ┌────────┐
+                       │YAML    │      ┌──────┐
+                       │---     │      │      │
+                       │Markdown│─────►│ HTML │
+                       │        │      │      │
+                       │        │      └──────┘
+                       │--------│ 
+                       │YAML    │      ┌──────┐  
+                       │---     │      │      │  
+                       │Markdown│─────►│ HTML │  
+                       │        │      │      │ 
+                       │        │      └──────┘ 
+                       │--------│
+                       │YAML    │      ┌──────┐ 
+                       │---     │      │      │ 
+                       │Markdown│─────►│ HTML │ 
+                       │        │      │      │ 
+                       │        │      └──────┘ 
+                       │--------│
+                       │YAML    │      ┌──────┐ 
+                       │---     │      │      │ 
+                       │Markdown│─────►│ HTML │ 
+                       │        │      │      │ 
+                       │        │      └──────┘ 
+                       │--------│
+                       │YAML    │      ┌──────┐ 
+                       │---     │      │      │ 
+                       │Markdown│─────►│ HTML │ 
+                       │        │      │      │ 
+                       │        │      └──────┘ 
+                       │--------│
+                       │YAML    │      ┌──────┐ 
+                       │---     │      │      │ 
+                       │Markdown│─────►│ HTML │ 
+                       │        │      │      │ 
+                       │        │      └──────┘ 
+                       └────────┘
 """
-
+print(opening_message)
 
 # Get Linux Username for portability between systems
 USERNAME = getpwuid(getuid())[0]
