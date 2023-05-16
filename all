@@ -15,7 +15,6 @@ from time import sleep
 from pwd import getpwuid
 from pyfiglet import Figlet
 from subprocess import Popen, PIPE
-print("Hit")
 
 opening_message = """
   ____ _                   _____ _           __   __ _    __  __ _     _ 
@@ -80,6 +79,7 @@ opening_message = """
                        └────────┘
 """
 print(opening_message)
+sleep(0.5)
 
 # Get Linux Username for portability between systems
 USERNAME = getpwuid(getuid())[0]
