@@ -1,30 +1,30 @@
 #! /usr/bin/env python
 msg1 = """
-  ____ _                   _____ _           __   __ _    __  __ _     _ 
+  ____ _                   _____ _           __   __ _    __  __ _     _
  / ___| |__   ___  _ __   |_   _| |__   ___  \ \ / // \  |  \/  | |   | |
 | |   | '_ \ / _ \| '_ \    | | | '_ \ / _ \  \ V // _ \ | |\/| | |   | |
 | |___| | | | (_) | |_) |   | | | | | |  __/   | |/ ___ \| |  | | |___|_|
  \____|_| |_|\___/| .__/    |_| |_| |_|\___|   |_/_/   \_\_|  |_|_____(_)
                   |_|                              Keep 1-file "for life"
-     ┌────────┐                            
-     │YAML    │      ┌──────┐     
+     ┌────────┐
+     │YAML    │      ┌──────┐
      │---     │      │      │     EXPRESS YOURSELF WITHOUT TECH OVERHEAD
-     │Markdown│─────►│ HTML │                                           
-     │        │      │      │     There's no "system" to see here. It's          
-     │        │      └──────┘     just a file, folks. Please disperse!! 
-     │--------│                                                                   
-     │YAML    │      ┌──────┐     > I'm building better blogging              
-     │---     │      │      │     > To replace a bygone era             
-     │Markdown│─────►│ HTML │     > Where your CMS is flogging          
-     │        │      │      │     > You to take up something clearer,   
-     │        │      └──────┘     > So you catalog your cat tails       
-     │--------│                   > In one file for the hashing         
-     │YAML    │      ┌──────┐     > Using YAML for the data             
-     │---     │      │      │     > And then Jekyll for the lashing.                               
-     │Markdown│─────►│ HTML │                                                                      
-     │        │      │      │     START TODAY! DRINKME TO BEGIN                 
-     │        │      └──────┘     https://mikelev.in/drinkme                    
-     └────────┘               
+     │Markdown│─────►│ HTML │
+     │        │      │      │     There's no "system" to see here. It's
+     │        │      └──────┘     just a file, folks. Please disperse!!
+     │--------│
+     │YAML    │      ┌──────┐     > I'm building better blogging
+     │---     │      │      │     > To replace a bygone era
+     │Markdown│─────►│ HTML │     > Where your CMS is flogging
+     │        │      │      │     > You to take up something clearer,
+     │        │      └──────┘     > So you catalog your cat tails
+     │--------│                   > In one file for the hashing
+     │YAML    │      ┌──────┐     > Using YAML for the data
+     │---     │      │      │     > And then Jekyll for the lashing.
+     │Markdown│─────►│ HTML │
+     │        │      │      │     START TODAY! DRINKME TO BEGIN
+     │        │      └──────┘     https://mikelev.in/drinkme
+     └────────┘
 
 - To change the files that are edited, edit ~/pyenv/bin/all
 - You must then also copy that into the vim repo: ~/repos/vim/all
