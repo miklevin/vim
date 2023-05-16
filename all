@@ -16,7 +16,7 @@ from pwd import getpwuid
 from pyfiglet import Figlet
 from subprocess import Popen, PIPE
 
-opening_message = """
+msg1 = """
   ____ _                   _____ _           __   __ _    __  __ _     _ 
  / ___| |__   ___  _ __   |_   _| |__   ___  \ \ / // \  |  \/  | |   | |
 | |   | '_ \ / _ \| '_ \    | | | '_ \ / _ \  \ V // _ \ | |\/| | |   | |
@@ -28,7 +28,9 @@ opening_message = """
 - To change the files that are edited, edit ~/pyenv/bin/all
 - You must then also copy that into the vim repo: ~/repos/vim/all
 - Commit and push the vim repo before running `all` again.
+"""
 
+msg2 = """
                     > I'm building better blogging  
                     > To replace a bygone era  
                     > Where your CMS is flogging  
@@ -37,7 +39,9 @@ opening_message = """
                     > In one file for the hashing  
                     > Using YAML for the data  
                     > And then Jekyll for the lashing.  
+"""
 
+msg3 = """
     How many blocks must writer walk into before they CHOP THE YAML!!!
 
                        ┌────────┐
@@ -78,7 +82,13 @@ opening_message = """
                        │        │      └──────┘ 
                        └────────┘
 """
-print(opening_message)
+print(msg1)
+sleep(1)
+
+print(msg2)
+sleep(2)
+
+print(msg3)
 sleep(0.5)
 
 # Get Linux Username for portability between systems
