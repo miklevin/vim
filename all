@@ -46,7 +46,7 @@ sleep(1)
 USERNAME = getpwuid(getuid())[0]
 GIT_EXE = "/usr/bin/git"
 REPOS = f"/home/{USERNAME}/repos/"
-CD_TO = f"{REPOS}MikeLev.in/"
+CD_TO = f"{REPOS}blog/"
 
 # Files to edit
 edit_files = [
