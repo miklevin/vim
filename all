@@ -51,9 +51,9 @@ CD_TO = f"{REPOS}blog/"
 # Files to edit
 edit_files = [
     f"{REPOS}blog/_drafts/journal.md",
+    f"{REPOS}journal/journal.txt",
     f"{REPOS}yamlchop/chop.py",
     "~/.config/nvim/init.vim",
-    f"{REPOS}journal/journal.txt",
     f"{REPOS}ftloa/journal.md",
     "~/pyenv/bin/all",
 ]
