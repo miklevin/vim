@@ -51,7 +51,7 @@ CD_TO = f"{REPOS}blog/"
 # Files to edit
 edit_files = [
     f"{REPOS}blog/_drafts/journal.md",
-    f"{REPOS}journal/journal.txt",
+    f"{REPOS}myjournal/journal.txt",
     f"{REPOS}yamlchop/chop.py",
     "~/.config/nvim/init.vim",
     f"{REPOS}ftloa/journal.md",
@@ -69,7 +69,7 @@ git_repos = [
     f"{REPOS}vim",
     f"{REPOS}yamlchop",
     f"{REPOS}ftloa",
-    f"{REPOS}journal",
+    f"{REPOS}myjournal",
     f"{REPOS}blog",
 ]
 
