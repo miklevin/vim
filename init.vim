@@ -6,9 +6,14 @@
 " What was once .vimrc is now init.vim.                                 
 " It's time to fix my macros. And update Slice & Dice.
 
-call plug#begin()
-Plug 'jbyuki/venn.nvim'
-call plug#end()
+" Check if running in Neovim
+if has('nvim')
+  " Neovim-specific settings go here
+  let @p = ":terminal python ~/repos/yamlchop/chop.py -f " . expand('%:p')
+else
+  " Vim-specific settings go here
+  let @p = ":execute '!python ~/repos/yamlchop/chop.py -f ' . expand('%:p')"
+endif
 
 syntax on
 syntax enable
@@ -72,8 +77,6 @@ let @i = '0v$hyi![€ýa$a](€ýa$pa)€ýa0llv/\.:s/\%V\<./\u&/g0llv/\.:s/\%V\-/ 
 
 "release currently edited blog.
 "Needs to be switched to :terminal NeoVim method for interactivity.
-"let @p = ":execute '!python ~/repos/yamlchop/chop.py -f ' . expand('%:p')"
-let @p = ":terminal python ~/repos/yamlchop/chop.py -f " . expand('%:p')
 
 "Make new journal entry.
 "THIS IS IT! The key to YAMLesque blogging (Reverse chronology and YAML headers).
